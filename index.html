@@ -3,1071 +3,643 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<title>南美走一趟｜秘魯 · 玻利維亞</title>
+<title>南美行程 · 96 天路線紀錄</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Noto+Serif+TC:wght@500;600;700&family=Inter:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#161A22;
-    --ink-2:#1F2430;
-    --paper:#F3EEE3;
-    --paper-dim:#E7E0D0;
-    --terracotta:#C1652F;
-    --teal:#3E7C8C;
-    --gold:#D4A24C;
-    --muted:#ACA695;
-    --line:rgba(243,238,227,0.16);
+    --paper:#EDE7D6;
+    --paper-deep:#E2D9C3;
+    --card:#F7F3E8;
+    --ink:#2A231C;
+    --ink-soft:#6B5F4E;
+    --ink-faint:#9C8F79;
+    --rule:#CFC3A5;
+    --peru:#B8442F;
+    --peru-soft:#E4C6BA;
+    --bolivia:#1E7F82;
+    --bolivia-soft:#C3DEDA;
+    --gold:#B9862F;
+    --transit:#7C7364;
+    --shadow: 0 1px 0 rgba(42,35,28,0.06), 0 8px 24px -14px rgba(42,35,28,0.35);
   }
   *{box-sizing:border-box;}
-  html{ background:var(--ink); min-height:100%; }
+  html{scroll-behavior:smooth;}
   body{
-    margin:0;padding:0;
-    background:var(--ink);
-    color:var(--paper);
-    font-family:'Noto Sans TC','Inter',sans-serif;
-    -webkit-font-smoothing:antialiased;
-    min-height:100vh;
-  }
-  .serif{font-family:'Noto Serif TC','Fraunces',serif;}
-  .mono{font-family:'JetBrains Mono',monospace;}
-
-  /* ===== HERO ===== */
-  header.hero{
-    position:relative;
-    padding:56px 24px 28px;
+    margin:0;
     background:
-      radial-gradient(ellipse at 15% -10%, rgba(212,162,76,0.18), transparent 55%),
-      radial-gradient(ellipse at 85% 0%, rgba(62,124,140,0.18), transparent 55%),
-      var(--ink);
-    border-bottom:1px solid var(--line);
+      radial-gradient(ellipse at top left, rgba(255,255,255,0.35), transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Noto Sans TC', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
   }
+  ::selection{background:var(--gold); color:var(--card);}
+
+  .mono{font-family:'JetBrains Mono', monospace;}
+
+  /* ---------- top nav ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(237,231,214,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  .topnav-inner{
+    max-width:1040px; margin:0 auto; padding:10px 24px;
+    display:flex; align-items:center; gap:14px;
+    overflow-x:auto; scrollbar-width:none;
+  }
+  .topnav-inner::-webkit-scrollbar{display:none;}
+  .brand{
+    font-family:'Noto Serif TC', serif; font-weight:700; font-size:15px;
+    white-space:nowrap; color:var(--ink); padding-right:8px; border-right:1px solid var(--rule);
+    margin-right:2px;
+  }
+  .pill{
+    flex:none;
+    font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.02em;
+    padding:6px 11px; border-radius:99px; border:1px solid var(--rule);
+    color:var(--ink-soft); text-decoration:none; white-space:nowrap;
+    transition:all .15s ease;
+  }
+  .pill:hover{border-color:var(--ink); color:var(--ink);}
+  .pill[data-c="peru"]{border-color:var(--peru-soft);}
+  .pill[data-c="peru"]:hover{background:var(--peru); border-color:var(--peru); color:#fff;}
+  .pill[data-c="bolivia"]{border-color:var(--bolivia-soft);}
+  .pill[data-c="bolivia"]:hover{background:var(--bolivia); border-color:var(--bolivia); color:#fff;}
+
+  /* ---------- hero ---------- */
+  .hero{max-width:1040px; margin:0 auto; padding:56px 24px 20px;}
   .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--gold);
-    margin:0 0 10px;
+    font-family:'JetBrains Mono', monospace; font-size:12px; letter-spacing:.12em;
+    color:var(--ink-soft); text-transform:uppercase; margin-bottom:14px;
   }
   h1{
-    font-family:'Noto Serif TC','Fraunces',serif;
-    font-weight:700;
-    font-size:clamp(28px,5.5vw,44px);
-    line-height:1.15;
-    margin:0 0 12px;
-    letter-spacing:-0.01em;
-    color:var(--paper);
+    font-family:'Noto Serif TC', serif; font-weight:900; font-size:clamp(34px,6vw,58px);
+    line-height:1.15; margin:0 0 14px; letter-spacing:-.01em;
   }
-  h1 em{ color:var(--terracotta); font-style:normal; }
+  h1 em{font-style:normal; color:var(--peru);}
   .hero-sub{
-    max-width:560px;
-    color:var(--muted);
-    font-size:14.5px;
-    line-height:1.7;
-    margin:0 0 22px;
+    max-width:560px; color:var(--ink-soft); font-size:15.5px; margin-bottom:30px;
   }
-  .sync-bar{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    gap:12px;
-    padding:12px 16px;
-    background:rgba(243,238,227,0.06);
-    border:1px solid var(--line);
-    border-radius:10px;
-    max-width:640px;
+  .stat-row{display:flex; flex-wrap:wrap; gap:28px; margin-bottom:42px;}
+  .stat b{
+    display:block; font-family:'Noto Serif TC', serif; font-weight:700; font-size:26px; color:var(--ink);
   }
-  .sync-bar button{
-    background:var(--terracotta);
-    color:#161A22;
-    border:none;
-    padding:9px 16px;
-    border-radius:7px;
-    font-family:'Noto Sans TC',sans-serif;
-    font-weight:700;
-    font-size:13px;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    transition:filter .15s;
-  }
-  .sync-bar button:hover{filter:brightness(1.12);}
-  .sync-bar button:disabled{opacity:0.55;cursor:wait;}
-  .sync-status{font-size:12.5px;color:var(--muted);font-family:'JetBrains Mono',monospace;}
-  .sync-status.ok{color:#9FD1AE;}
-  .sync-status.err{color:#E39A9A;}
+  .stat span{font-size:11.5px; color:var(--ink-faint); font-family:'JetBrains Mono',monospace; letter-spacing:.03em;}
 
-  /* ===== ELEVATION NAV (signature element) ===== */
+  /* ---------- elevation spine (signature element) ---------- */
   .elev-wrap{
-    padding:26px 24px 8px;
-    background:var(--ink);
-    border-bottom:1px solid var(--line);
-    overflow-x:auto;
+    max-width:1040px; margin:0 auto 64px; padding:0 24px;
   }
-  .elev-label-row{
-    display:flex; justify-content:space-between; max-width:1900px; margin:0 auto 6px;
-    font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted); letter-spacing:.05em;
+  .elev-card{
+    background:var(--card); border:1px solid var(--rule); border-radius:14px;
+    padding:26px 24px 18px; box-shadow:var(--shadow);
   }
-  .elev-scroll{ min-width:1750px; max-width:1900px; margin:0 auto; }
-  .elev-svg{ display:block; width:100%; height:170px; }
-  .elev-city-btn{ cursor:pointer; }
-  .elev-city-btn .dot{ transition: r .15s, fill .15s; }
-  .elev-city-btn:hover .dot, .elev-city-btn.active .dot{ fill:var(--terracotta); }
-  .elev-city-btn .lbl{ font-family:'Noto Sans TC',sans-serif; font-size:10.5px; fill:var(--muted); }
-  .elev-city-btn .lbl2{ font-family:'Noto Sans TC',sans-serif; font-size:9px; fill:var(--muted); opacity:0.75; }
-  .elev-city-btn.active .lbl{ fill:var(--paper); font-weight:600; }
-  .elev-path{ fill:none; stroke:var(--gold); stroke-width:1.5; opacity:0.6; }
-  .elev-area{ fill:url(#elevGrad); opacity:0.55; }
+  .elev-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; flex-wrap:wrap; gap:6px;}
+  .elev-title{font-family:'Noto Serif TC', serif; font-weight:700; font-size:16px;}
+  .elev-note{font-size:12px; color:var(--ink-faint); font-family:'JetBrains Mono',monospace;}
+  svg.elev-svg{width:100%; height:auto; display:block; margin-top:6px; overflow:visible;}
+  .elev-pt-label{font-family:'JetBrains Mono',monospace; font-size:10.5px; fill:var(--ink-soft);}
+  .elev-pt-city{font-family:'Noto Sans TC',sans-serif; font-size:11px; fill:var(--ink);}
+  .elev-legend{display:flex; gap:18px; margin-top:14px; flex-wrap:wrap;}
+  .elev-legend div{display:flex; align-items:center; gap:6px; font-size:11.5px; color:var(--ink-soft);}
+  .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
 
-  /* ===== MAIN LAYOUT ===== */
-  main{ background:var(--ink); max-width:1400px; margin:0 auto; padding:28px 24px 80px; }
-  .city-head{ display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:4px; }
-  .city-head h2{ font-family:'Noto Serif TC',serif; font-size:28px; margin:0; color:var(--paper); }
-  .city-country{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold); letter-spacing:.06em; }
-  .city-alt{ font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); }
-  .city-days{ font-size:13px; color:var(--muted); margin:2px 0 24px; }
-
-  .grid{ display:grid; grid-template-columns:1.1fr 1fr; gap:22px; align-items:start; }
-  @media(max-width:920px){ .grid{ grid-template-columns:1fr; } }
-
-  .map-panel{
-    height:420px;
-    border-radius:14px;
-    border:1px solid var(--line);
-    background:
-      radial-gradient(ellipse at 30% 20%, rgba(212,162,76,0.10), transparent 60%),
-      radial-gradient(ellipse at 80% 80%, rgba(62,124,140,0.10), transparent 60%),
-      var(--ink-2);
-    overflow:hidden;
-    position:relative;
+  /* ---------- legs ---------- */
+  .legs{max-width:1040px; margin:0 auto; padding:0 24px 100px;}
+  .leg{margin-bottom:56px; scroll-margin-top:70px;}
+  .leg-head{
+    display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap;
+    gap:10px; border-bottom:2px solid var(--ink); padding-bottom:12px; margin-bottom:22px;
   }
-  #mapSvg{ width:100%; height:100%; display:block; }
-  .contour{ fill:none; stroke:var(--gold); opacity:0.14; stroke-width:1; }
-  .map-pin-walk{ cursor:pointer; }
-  .map-pin-walk circle{ fill:var(--terracotta); stroke:var(--ink); stroke-width:2; }
-  .map-pin-walk text{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:10.5px; fill:#161A22; text-anchor:middle; dominant-baseline:central; pointer-events:none; }
-  .map-pin-sugg{ cursor:pointer; }
-  .map-pin-sugg circle{ fill:var(--teal); stroke:var(--ink); stroke-width:2; }
-  .map-route{ fill:none; stroke:var(--terracotta); stroke-width:2.5; opacity:0.85; }
-  .map-info{
-    position:absolute; left:12px; right:12px; bottom:12px;
-    background:rgba(22,26,34,0.88);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:9px 13px;
-    font-size:12.5px;
-    color:var(--paper);
-    backdrop-filter:blur(4px);
+  .leg-head-left{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;}
+  .leg-num{font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--ink-faint);}
+  .leg-name{font-family:'Noto Serif TC', serif; font-weight:700; font-size:26px;}
+  .leg-en{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.04em;}
+  .leg-meta{display:flex; gap:16px; align-items:center;}
+  .badge{
+    font-family:'JetBrains Mono',monospace; font-size:11.5px; padding:4px 10px; border-radius:99px;
+    border:1px solid var(--rule); color:var(--ink-soft);
   }
-  .map-info .mi-name{ font-weight:600; margin-bottom:2px; }
-  .map-info .mi-note{ color:var(--muted); font-size:12px; }
-  .map-legend{ display:flex; gap:16px; margin-top:10px; font-size:12px; color:var(--muted); flex-wrap:wrap; }
-  .map-legend span{ display:inline-flex; align-items:center; gap:6px; }
-  .swatch{ width:9px;height:9px;border-radius:50%; display:inline-block; }
+  .badge.alt{border-color:var(--gold); color:#8a6420; background:rgba(185,134,47,0.08);}
 
-  .panel{
-    background:rgba(243,238,227,0.055);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:18px 20px 20px;
-    margin-bottom:18px;
+  .day-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(260px,1fr)); gap:14px;}
+  .day-card{
+    background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:16px 17px 15px;
+    box-shadow:var(--shadow);
   }
-  .panel h3{ font-family:'Noto Serif TC',serif; font-size:16.5px; margin:0 0 4px; color:var(--paper); display:flex; align-items:center; gap:8px; }
-  .panel .panel-sub{ font-size:12px; color:var(--muted); margin:0 0 14px; }
+  .leg[data-country="peru"] .day-card{border-left:4px solid var(--peru);}
+  .leg[data-country="bolivia"] .day-card{border-left:4px solid var(--bolivia);}
+  .leg[data-country="transit"] .day-card{border-left:4px solid var(--transit);}
 
-  .walk-list{ list-style:none; margin:0; padding:0; counter-reset:walk; }
-  .walk-list li{ counter-increment:walk; display:flex; gap:12px; padding:11px 0; border-top:1px solid var(--line); }
-  .walk-list li:first-child{ border-top:none; }
-  .walk-list li::before{
-    content:counter(walk);
-    flex:0 0 auto; width:22px;height:22px; border-radius:50%;
-    background:var(--terracotta); color:#161A22;
-    font-family:'JetBrains Mono',monospace; font-weight:700; font-size:11.5px;
-    display:flex; align-items:center; justify-content:center; margin-top:1px;
-  }
-  .walk-list .wl-name{ font-weight:600; font-size:14.5px; color:var(--paper); }
-  .walk-list .wl-note{ font-size:12.5px; color:var(--muted); margin-top:2px; line-height:1.5; }
-  .empty-note{ font-size:13px; color:var(--muted); font-style:italic; padding:6px 0 2px; }
-
-  .sugg-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
-  .sugg-card{ border:1px solid var(--line); border-radius:10px; padding:12px 14px; background:rgba(62,124,140,0.1); }
-  .sugg-card .sc-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:8px; }
-  .sugg-card .sc-name{ font-weight:600; font-size:14px; color:var(--paper); }
-  .sugg-card .sc-desc{ font-size:12.5px; color:var(--muted); line-height:1.6; margin-top:4px; }
-  .add-btn{
-    flex:0 0 auto; background:transparent; border:1px solid var(--teal); color:#BEE3EA;
-    font-family:'JetBrains Mono',monospace; font-size:11px; padding:5px 9px; border-radius:6px; cursor:pointer; white-space:nowrap;
-  }
-  .add-btn.added{ background:var(--teal); color:var(--ink); border-color:var(--teal); }
-
-  details.sheet-raw summary{ cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted); padding:4px 0; }
-  table.raw-table{ width:100%; border-collapse:collapse; margin-top:10px; font-size:12px; }
-  table.raw-table th, table.raw-table td{ text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); vertical-align:top; color:var(--paper); }
-  table.raw-table th{ color:var(--gold); font-weight:500; font-family:'JetBrains Mono',monospace; font-size:10.5px; text-transform:uppercase; letter-spacing:.04em; }
-
-  .city-rail{ display:flex; gap:8px; overflow-x:auto; padding-bottom:14px; margin-bottom:6px; }
-  .city-chip{
-    flex:0 0 auto; padding:7px 13px; border-radius:999px; border:1px solid var(--line);
-    font-size:12.5px; color:var(--muted); cursor:pointer; background:transparent; font-family:'Noto Sans TC',sans-serif;
-  }
-  .city-chip.active{ background:var(--paper); color:var(--ink); border-color:var(--paper); font-weight:600; }
-
-  .todo-banner{
-    max-width:1400px; margin:0 auto; padding:14px 24px; background:rgba(212,162,76,0.08);
-    border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-    font-size:12.5px; color:var(--muted); line-height:1.6;
+  .day-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px;}
+  .day-date{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-soft);}
+  .day-num{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--ink-faint);}
+  .day-loc{font-weight:600; font-size:14.5px; margin-bottom:6px;}
+  .day-stay{font-size:12px; color:var(--ink-soft); margin-bottom:9px;}
+  .day-stay:before{content:"住 · "; color:var(--ink-faint);}
+  .day-activity{font-size:13px; color:var(--ink); white-space:pre-line;}
+  .day-flag{
+    margin-top:10px; font-size:11.5px; color:#8a5a2e; background:rgba(185,134,47,0.12);
+    border:1px solid rgba(185,134,47,0.35); border-radius:7px; padding:6px 9px;
   }
 
-  footer{ text-align:center; padding:30px 20px 50px; color:var(--muted); font-size:12px; background:var(--ink); }
-  a{ color:var(--gold); }
+  /* weekly-pattern card for repetitive Cusco block */
+  .week-card{
+    background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:20px 22px;
+    box-shadow:var(--shadow); margin-bottom:16px;
+  }
+  .week-card p{margin:0 0 10px; font-size:13.5px; color:var(--ink-soft);}
+  .week-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; margin-top:14px;}
+  .week-grid .d{
+    text-align:center; padding:9px 4px; border-radius:8px; font-family:'JetBrains Mono',monospace; font-size:11px;
+  }
+  .week-grid .d.study{background:rgba(184,68,47,0.1); color:var(--peru); font-weight:700;}
+  .week-grid .d.free{background:rgba(0,0,0,0.03); color:var(--ink-faint);}
+  .week-grid .lbl{font-family:'Noto Sans TC',sans-serif; font-size:10.5px; color:var(--ink-faint); font-weight:600;}
+
+  .note-card{
+    background:transparent; border:1px dashed var(--ink-faint); border-radius:12px; padding:18px 20px;
+    color:var(--ink-soft); font-size:13.5px;
+  }
+  .note-card b{color:var(--ink); font-family:'Noto Serif TC',serif;}
+
+  /* ---------- points of interest (grouped by area) ---------- */
+  .poi-section{margin-top:26px;}
+  .poi-title{
+    font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-faint); margin-bottom:12px; display:flex; align-items:center; gap:8px;
+  }
+  .poi-title:before, .poi-title:after{content:""; height:1px; background:var(--rule); flex:1;}
+  .poi-groups{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px;}
+  .poi-group{
+    background:rgba(255,255,255,0.35); border:1px solid var(--rule); border-radius:12px;
+    padding:15px 16px 14px;
+  }
+  .leg[data-country="peru"] .poi-group{border-top:3px solid var(--peru-soft);}
+  .leg[data-country="bolivia"] .poi-group{border-top:3px solid var(--bolivia-soft);}
+  .poi-area{font-family:'Noto Serif TC',serif; font-weight:700; font-size:14.5px; margin-bottom:3px;}
+  .poi-desc{font-size:11.5px; color:var(--ink-faint); margin-bottom:10px; line-height:1.5;}
+  .poi-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+  .poi-list li{
+    font-size:12.5px; color:var(--ink); padding-left:14px; position:relative; line-height:1.45;
+  }
+  .poi-list li:before{
+    content:"·"; position:absolute; left:2px; color:var(--gold); font-weight:700;
+  }
+  .poi-list li .tag{color:var(--ink-faint); font-size:11px;}
+
+  footer{
+    max-width:1040px; margin:0 auto; padding:0 24px 60px; color:var(--ink-faint); font-size:12px;
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  @media (max-width:640px){
+    .hero{padding:40px 18px 10px;}
+    .legs{padding:0 18px 80px;}
+    .elev-wrap{padding:0 18px;}
+    .day-grid{grid-template-columns:1fr;}
+    .week-grid{grid-template-columns:repeat(7,1fr); font-size:9px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
 </style>
 </head>
 <body>
 
+<nav class="topnav">
+  <div class="topnav-inner" id="topnav-inner">
+    <span class="brand">南美 96 日</span>
+  </div>
+</nav>
+
 <header class="hero">
-  <p class="eyebrow">秘魯 → 玻利維亞 · 目前試算表已排到烏尤尼</p>
-  <h1>南美走一趟，<em>順著海拔</em>走</h1>
-  <p class="hero-sub">這頁會讀取你 Google 試算表裡的「Itinerary」分頁。每個城市分成兩區：你已經排好的景點（依走路動線排序），還有你還沒排進去、但值得考慮的景點。</p>
-  <div class="sync-bar">
-    <button id="syncBtn">🔄 從 Google 試算表同步</button>
-    <span class="sync-status" id="syncStatus">尚未同步 — 目前顯示的是最新讀到的內容</span>
-  </div>
-  <div class="sync-bar" style="margin-top:10px;">
-    <input id="gmapsKeyInput" type="text" placeholder="貼上你的 Google Maps API 金鑰（選填）" style="flex:1; min-width:200px; background:transparent; border:1px solid var(--line); color:var(--paper); padding:8px 10px; border-radius:7px; font-size:12.5px; font-family:'JetBrains Mono',monospace;">
-    <button id="gmapsApplyBtn">套用真實 Google 地圖</button>
-    <span class="sync-status" id="gmapsStatus">目前使用示意地圖（不需要金鑰，任何環境都能顯示）</span>
-  </div>
-  <p class="hero-sub" style="margin:8px 0 0; font-size:12px;">還沒有金鑰？到 <a href="https://console.cloud.google.com/google/maps-apis/credentials" target="_blank" rel="noopener">Google Cloud Console</a> 免費申請一組「Maps JavaScript API」金鑰即可。這頁匯出成獨立網頁、放到你自己的網站後，通常就能正常載入真實地圖；在 Claude 這裡預覽時，有些網路環境可能還是連不到 Google 的地圖伺服器。</p>
-  <div class="sync-bar" style="margin-top:10px;">
-    <a class="add-btn" style="text-decoration:none; padding:8px 14px; font-size:12.5px;" href="https://maps.app.goo.gl/mzZYJSyVjb8nwrUp9?g_st=i" target="_blank" rel="noopener">📍 秘魯地點清單</a>
-    <a class="add-btn" style="text-decoration:none; padding:8px 14px; font-size:12.5px;" href="https://maps.app.goo.gl/ReHpF7QBqUyu5N1D7?g_st=i" target="_blank" rel="noopener">🍽 推薦餐廳清單</a>
+  <div class="eyebrow">9/16 → 12/21 · Peru → Bolivia → 未完待續</div>
+  <h1>利馬到烏尤尼，<br><em>一路往上爬的</em>南美行程</h1>
+  <p class="hero-sub">從海平面的利馬出發，翻過 3,400 公尺的庫斯科，一路爬升到接近 4,000 公尺的的的喀喀湖畔與玻利維亞高原——這趟行程最需要留意的，其實是海拔。</p>
+  <div class="stat-row">
+    <div class="stat"><b>96</b><span>總天數（含未定行程）</span></div>
+    <div class="stat"><b>2 <span class="mono" style="font-size:14px">→</span> 4+</b><span>已排／規劃中國家</span></div>
+    <div class="stat"><b>3,841m</b><span>行程最高點・科帕卡瓦納</span></div>
+    <div class="stat"><b>0 → 3,400m</b><span>利馬到庫斯科的爬升</span></div>
   </div>
 </header>
 
-<div class="elev-wrap">
-  <div class="elev-label-row"><span>海拔 (m)</span><span>依你行程表上的 Day 順序排列</span></div>
-  <div class="elev-scroll"><svg class="elev-svg" id="elevSvg" viewBox="0 0 1750 170" preserveAspectRatio="none"></svg></div>
-</div>
-
-<main>
-  <div class="city-rail" id="cityRail"></div>
-
-  <div class="city-head">
-    <h2 id="cityName">—</h2>
-    <span class="city-country" id="cityCountry"></span>
-    <span class="city-alt" id="cityAlt"></span>
-  </div>
-  <p class="city-days" id="cityDays"></p>
-
-  <div class="grid">
-    <div>
-      <div class="map-panel">
-        <svg id="mapSvg" viewBox="0 0 640 420" preserveAspectRatio="xMidYMid meet"></svg>
-        <div id="gmapDiv" style="display:none; width:100%; height:100%;"></div>
-        <div class="map-info" id="mapInfo">點地圖上的標記查看名稱與備註</div>
-      </div>
-      <div class="map-legend">
-        <span><i class="swatch" style="background:#C1652F"></i>已排景點（走路動線，依序編號）</span>
-        <span><i class="swatch" style="background:#3E7C8C"></i>推薦補充景點</span>
-      </div>
-      <div class="panel" style="margin-top:18px;">
-        <details class="sheet-raw">
-          <summary>▸ 查看這個城市在試算表裡的原始資料（同步後自動更新）</summary>
-          <div id="rawTableWrap"></div>
-        </details>
-      </div>
+<section class="elev-wrap">
+  <div class="elev-card">
+    <div class="elev-head">
+      <div class="elev-title">海拔起伏 Elevation Profile</div>
+      <div class="elev-note">依行程順序排列・非等比例時間軸</div>
     </div>
-
-    <div>
-      <div class="panel">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
-          <div>
-            <h3>📍 已安排行程</h3>
-            <p class="panel-sub">依地理位置排出比較順的走法，點地圖可對照位置</p>
-          </div>
-          <button id="clearWalkBtn" class="add-btn" style="white-space:nowrap; border-color:var(--terracotta); color:#E8A98A;">清空這個城市</button>
-        </div>
-        <ul class="walk-list" id="walkList"></ul>
-      </div>
-      <div class="panel">
-        <h3>✨ 值得考慮、你還沒排進去的景點</h3>
-        <p class="panel-sub">加入只會存在這個瀏覽器裡，方便你自己做取捨，不會動到試算表</p>
-        <div class="sugg-grid" id="suggGrid"></div>
-        <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--line);">
-          <p class="panel-sub" style="margin-bottom:8px;">✏️ 自己新增景點（例如你 Google 地圖清單裡的地點）</p>
-          <div style="display:flex; flex-direction:column; gap:8px;">
-            <input id="customSpotName" type="text" placeholder="景點名稱" style="background:transparent; border:1px solid var(--line); color:var(--paper); padding:8px 10px; border-radius:7px; font-size:13px; font-family:'Noto Sans TC',sans-serif;">
-            <input id="customSpotDesc" type="text" placeholder="簡短介紹（選填）" style="background:transparent; border:1px solid var(--line); color:var(--paper); padding:8px 10px; border-radius:7px; font-size:13px; font-family:'Noto Sans TC',sans-serif;">
-            <button id="customSpotAddBtn" style="align-self:flex-start; background:var(--teal); color:var(--ink); border:none; padding:8px 16px; border-radius:7px; font-weight:700; font-size:13px; cursor:pointer;">＋ 新增到這個城市的建議景點</button>
-          </div>
-        </div>
-      </div>
+    <svg class="elev-svg" viewBox="0 0 980 220" id="elevSvg"></svg>
+    <div class="elev-legend">
+      <div><span class="dot" style="background:var(--peru)"></span>秘魯路段</div>
+      <div><span class="dot" style="background:var(--bolivia)"></span>玻利維亞路段</div>
+      <div><span class="dot" style="background:var(--gold)"></span>3,000m 以上高海拔區</div>
     </div>
   </div>
-</main>
+</section>
 
-<div class="todo-banner">📝 你的試算表目前規劃到烏尤尼（11/29）為止，之後的日期還是空的。如果你之後決定要不要接智利／阿根廷／巴塔哥尼亞這段，跟我說一聲，我再幫你把那幾站加進來。</div>
+<main class="legs" id="legs"></main>
 
-<footer>資料來源：你的 Google 試算表（south_america_travel_template · Itinerary 分頁）· 建議景點僅供參考，出發前請再次確認開放時間與海拔風險</footer>
+<footer>南美行程（連動）· 依 Google Sheets 資料整理 · 頁面內容以試算表為準，如有異動請回試算表更新</footer>
 
 <script>
-const SHEET_ID = "1CepGjpKBHMbBB3yvpUVn3Zz3z2z-bh88NplQS8elwTM";
-const SHEET_NAME = "Itinerary";
-
-/* ===================== CITY DATA (matches current spreadsheet: Lima -> Uyuni) ===================== */
-const CITIES = [
-  { id:"lima", name:"Lima 利馬", country:"秘魯", coords:[-12.0464,-77.0428], altitude:0, days:"Day 1–5",
-    walk:[],
-    suggestions:[
-      {name:"利馬主廣場 Plaza Mayor", coords:[-12.0464,-77.0303], desc:"世界遺產核心，殖民城市起點"},
-      {name:"利馬大教堂", coords:[-12.0458,-77.0300], desc:"皮薩羅墓所在"},
-      {name:"總統府", coords:[-12.0453,-77.0303], desc:"可看衛兵交接"},
-      {name:"聖方濟修道院＋地下墓穴", coords:[-12.0455,-77.0281], desc:"知名骨頭地下室"},
-      {name:"愛情公園（Miraflores）", coords:[-12.1310,-77.0286], desc:"海景吻雕塑"},
-      {name:"米拉弗洛雷斯濱海步道", coords:[-12.1280,-77.0300], desc:"看太平洋、滑翔傘"},
-      {name:"Larcomar 懸崖購物中心", coords:[-12.1319,-77.0296], desc:"建在懸崖上的商場"},
-      {name:"肯尼迪公園", coords:[-12.1214,-77.0298], desc:"貓很多"},
-      {name:"普克亞納金字塔 Huaca Pucllana", coords:[-12.1122,-77.0292], desc:"市中心前印加遺址"},
-      {name:"嘆息橋（Barranco）", coords:[-12.1489,-77.0208], desc:"最浪漫地標"},
-      {name:"巴蘭科海岸線", coords:[-12.1467,-77.0230], desc:"看海與夕陽"},
-      {name:"拉爾科博物館", coords:[-12.0733,-77.0728], desc:"前哥倫布文明收藏"},
-      {name:"魔法水舞公園", coords:[-12.0703,-77.0328], desc:"晚上燈光噴泉秀"},
-      {name:"Pachacamac 神殿", coords:[-12.2561,-76.9006], desc:"郊區大型古文明遺址"},
-      {name:"橄欖公園（San Isidro）", coords:[-12.0977,-77.0362], desc:"幾百年橄欖樹"},
-      {name:"聖克里斯托巴山觀景台", coords:[-12.0378,-77.0303], desc:"纜車上去看利馬全景與歷史中心屋頂，日落時分尤其美，建議跟團或白天前往"},
-      {name:"Surquillo 在地市場", coords:[-12.1150,-77.0177], desc:"比觀光市場更生活化，秘魯水果、香料、便宜海鮮飯"},
-      {name:"唐人街 Barrio Chino", coords:[-12.0524,-77.0221], desc:"南美最大華人區之一，離主廣場走路可到"}
-    ]
-  },
-  { id:"paracas", name:"Paracas 帕拉卡斯", country:"秘魯", coords:[-13.8306,-76.2378], altitude:0, days:"Day 6–7",
-    walk:[],
-    suggestions:[
-      {name:"Pisco 酒莊", coords:[-13.7167,-76.1000], desc:"Pisco酒是秘魯國酒，附近有幾間老牌酒莊可參觀試飲"},
-      {name:"Ballestas Islands 鳥島船遊", coords:[-13.7386,-76.3922], desc:"看海獅、企鵝，半天到一天，出發前會先經過坎德拉布拉地畫"},
-      {name:"Paracas 小漁村＋海岸自然景觀", coords:[-13.8400,-76.2500], desc:"Paracas國家保護區內"},
-      {name:"紅沙灘 Playa Roja", coords:[-13.9333,-76.3167], desc:"Paracas國家保護區內礦物質形成的紅色沙灘，順路可以一起排進保護區行程"},
-      {name:"El Chaco 濱海步道", coords:[-13.8378,-76.2472], desc:"小鎮的海濱步道，傍晚散步吃海鮮的地方"}
-    ]
-  },
-  { id:"huacachina", name:"Huacachina 瓦卡奇納沙漠綠洲", country:"秘魯", coords:[-14.0873,-75.7628], altitude:400, days:"Day 8–9",
-    walk:[],
-    suggestions:[
-      {name:"沙丘車＋滑沙 Sandboarding & Buggy", coords:[-14.0900,-75.7600], desc:"傍晚出發最推薦，沙漠越野車衝沙丘配夕陽，是Huacachina的招牌活動"},
-      {name:"綠洲湖畔散步", coords:[-14.0873,-75.7628], desc:"環繞小小綠洲一圈約20分鐘，適合早上或深夜人少時走"},
-      {name:"Ica 地區博物館＋Pisco試飲", coords:[-14.0678,-75.7286], desc:"開車10分鐘到Ica市區，可以順路安排酒莊試飲"}
-    ]
-  },
-  { id:"arequipa", name:"Arequipa 阿雷基帕", country:"秘魯", coords:[-16.4090,-71.5375], altitude:2335, days:"Day 10–17",
-    walk:[],
-    suggestions:[
-      {name:"抵達休息", coords:[-16.4090,-71.5375], desc:"夜車抵達，先適應海拔"},
-      {name:"Santa Catalina 修道院", coords:[-16.3958,-71.5370], desc:"城中之城，阿雷基帕必去"},
-      {name:"城市與火山景觀", coords:[-16.3950,-71.5300], desc:"眺望 Misti 火山"},
-      {name:"武器廣場＋主教座堂", coords:[-16.3989,-71.5370], desc:"白色火山岩建築的廣場，阿雷基帕被稱為「白色之城」的原因就在這裡"},
-      {name:"Yanahuara 觀景台", coords:[-16.3925,-71.5450], desc:"透過白色拱門框住 Misti 火山的經典取景點，走路可到"},
-      {name:"安地斯聖物博物館", coords:[-16.3980,-71.5365], desc:"收藏冰封木乃伊「Juanita」，秘魯少數能近距離看冷凍印加祭品的地方"},
-      {name:"科爾卡峽谷一日健行", coords:[-15.5850,-71.7800], desc:"從阿雷基帕出發的一日／多日團，若想安排可加回來——目前試算表裡沒有寫這段的細節"},
-      {name:"Cruz del Cóndor 觀景點（科爾卡）", coords:[-15.6019,-71.8508], desc:"清晨時段最容易看到安地斯神鷹乘著氣流升起，科爾卡峽谷最經典的畫面，跟上面的峽谷健行同一段路線"},
-      {name:"Chivay La Calera 溫泉（科爾卡）", coords:[-15.6350,-71.6050], desc:"科爾卡峽谷健行完最適合放鬆的天然溫泉"}
-    ]
-  },
-  { id:"ollantaytambo", name:"Ollantaytambo 歐蘭泰坦波", country:"秘魯", coords:[-13.2568,-72.2636], altitude:2800, days:"Day 18–21, 24–25",
-    walk:[],
-    suggestions:[
-      {name:"歐蘭泰坦波遺址", coords:[-13.2568,-72.2636], desc:"住宿安排在附近的Urubamba，這裡是隔天搭火車去馬丘比丘的起點"},
-      {name:"皮薩克 Pisac 遺址與市場", coords:[-13.4257,-71.8455], desc:"聖谷另一端的印加遺址加傳統市集，跟歐蘭泰坦波常被排在同一天"},
-      {name:"莫瑞梯田 Moray", coords:[-13.3327,-72.1859], desc:"同心圓層層下凹的印加農業實驗梯田，離Maras鹽田很近"},
-      {name:"馬拉斯鹽田 Salineras de Maras", coords:[-13.3110,-72.1157], desc:"上千格手工鹽田沿山坡而下，跟Moray常安排半天一起走"},
-      {name:"欽切羅 Chinchero", coords:[-13.3969,-72.0522], desc:"傳統紡織村落，週日有市集，教堂內部有精美壁畫"}
-    ]
-  },
-  { id:"machu-picchu", name:"Machu Picchu 馬丘比丘", country:"秘魯", coords:[-13.1547,-72.5250], altitude:2430, days:"Day 22–23",
-    walk:[],
-    suggestions:[
-      {name:"Aguas Calientes 抵達", coords:[-13.1547,-72.5250], desc:"由Ollantaytambo搭火車前往"},
-      {name:"馬丘比丘遺址參觀", coords:[-13.1631,-72.5450], desc:"最核心的行程"},
-      {name:"馬丘比丘山 Montaña Machu Picchu", coords:[-13.1650,-72.5430], desc:"比較長但更少人排隊的登高步道，能拍到遺址完整全景，需另外購票且限額"},
-      {name:"Aguas Calientes 溫泉", coords:[-13.1560,-72.5259], desc:"健行完回小鎮的溫泉，放鬆雙腳，晚上人不多"},
-      {name:"Mandor 瀑布步道", coords:[-13.1490,-72.5340], desc:"從小鎮出發約2小時來回的輕鬆步道，人少清幽"}
-    ]
-  },
-  { id:"cusco", name:"Cusco 庫斯科", country:"秘魯", coords:[-13.5319,-71.9675], altitude:3399, days:"Day 26–52（西班牙語課程，homestay）",
-    walk:[],
-    suggestions:[
-      {name:"San Pedro 市場", coords:[-13.5231,-71.9819], desc:"在地生活感十足的市場"},
-      {name:"印加石牆街區（Hatunrumiyoc）", coords:[-13.5165,-71.9772], desc:"著名的印加石砌工藝街區"},
-      {name:"武器廣場 Plaza de Armas", coords:[-13.5170,-71.9785], desc:"庫斯科的中心，古城步行的起點，長住期間會經常路過"},
-      {name:"科里坎查太陽神殿 Qorikancha", coords:[-13.5202,-71.9752], desc:"印加帝國最重要的神殿之一，殖民教堂疊在印加石牆上"},
-      {name:"薩克塞瓦曼 Sacsayhuamán", coords:[-13.5083,-71.9819], desc:"巨石堆疊的印加城牆遺址，走路可到市區邊緣，也是欣賞庫斯科全景的高點"},
-      {name:"白色耶穌像 Cristo Blanco", coords:[-13.5081,-71.9761], desc:"就在Sacsayhuamán附近，免費看整個庫斯科盆地日落，長住期間很適合傍晚散步過去"},
-      {name:"聖布拉斯街區 San Blas", coords:[-13.5177,-71.9746], desc:"藝術家與工作室聚集的坡道老城區，適合上完課後慢慢晃、喝咖啡"}
-    ]
-  },
-  { id:"puerto-maldonado", name:"Puerto Maldonado 亞馬遜雨林", country:"秘魯", coords:[-12.5933,-69.1893], altitude:250, days:"Day 53–56",
-    walk:[],
-    suggestions:[
-      {name:"庫斯科→Puerto Maldonado", coords:[-12.5933,-69.1893], desc:"由庫斯科搭機前往雨林門戶小鎮"},
-      {name:"亞馬遜雨林行程", coords:[-12.8333,-69.2833], desc:"一般會住雨林小屋深入Tambopata保護區"},
-      {name:"Lago Sandoval 牛軛湖", coords:[-12.6167,-69.0500], desc:"划船進入的原始湖泊，是觀察巨獺（giant otter）最有名的地點之一"},
-      {name:"金剛鸚鵡舔土地 Macaw Clay Lick", coords:[-12.8500,-69.2900], desc:"清晨大批金剛鸚鵡聚集舔食黏土的壯觀景象，多數Tambopata行程都會安排"},
-      {name:"夜間賞凱門鱷船遊", coords:[-12.8333,-69.2833], desc:"晚上搭船用手電筒找凱門鱷與夜行動物，是雨林小屋常見的夜間活動"}
-    ]
-  },
-  { id:"puno", name:"Puno 普諾", country:"秘魯", coords:[-15.8402,-70.0219], altitude:3827, days:"Day 57–59",
-    walk:[],
-    suggestions:[
-      {name:"Uros 浮島", coords:[-15.8189,-69.9469], desc:"蘆葦編織的人工浮島，的的喀喀湖最經典的行程"},
-      {name:"Taquile 島", coords:[-15.7850,-69.6900], desc:"比Uros再遠一點的天然島嶼，島民手工織品被列為聯合國非物質文化遺產"},
-      {name:"Sillustani 前印加墓塔", coords:[-15.7136,-70.1517], desc:"湖畔的圓塔墓群，比馬丘比丘更早的建築工法，遊客相對少"}
-    ]
-  },
-  { id:"copacabana", name:"Copacabana", country:"玻利維亞", coords:[-16.1667,-69.0833], altitude:3841, days:"Day 60–61",
-    walk:[],
-    suggestions:[
-      {name:"Copacabana 大教堂 Basílica", coords:[-16.1656,-69.0854], desc:"玻利維亞最重要的朝聖教堂之一，鎮中心地標"},
-      {name:"Cerro Calvario 觀景台", coords:[-16.1700,-69.0850], desc:"鎮後方步行約30分鐘可上到的山頭，日落時能看到整個的的喀喀湖"}
-    ]
-  },
-  { id:"isla-del-sol", name:"Isla del Sol 太陽島", country:"玻利維亞", coords:[-16.0000,-69.1500], altitude:3900, days:"Day 62",
-    walk:[],
-    suggestions:[
-      {name:"太陽島船遊與健行", coords:[-16.0000,-69.1500], desc:"通常從Copacabana搭船往返，南北村落間有健行步道"},
-      {name:"印加階梯 Fuente del Inca", coords:[-16.0250,-69.1580], desc:"島上南側碼頭附近的三口印加聖泉階梯，下船後很快就能到"},
-      {name:"聖石 Roca Sagrada", coords:[-15.9900,-69.1600], desc:"印加神話中太陽誕生的地方，位於島的北端，健行路線的終點"}
-    ]
-  },
-  { id:"lapaz", name:"La Paz", country:"玻利維亞", coords:[-16.5000,-68.1500], altitude:3640, days:"Day 63–66",
-    walk:[],
-    suggestions:[
-      {name:"女巫市場 Witches Market", coords:[-16.4956,-68.1428], desc:"傳統玻利維亞民俗信仰用品市場，市中心走路就到"},
-      {name:"死亡公路騎車 Death Road", coords:[-16.2833,-67.8833], desc:"一日單車行程，從高海拔一路下滑到雨林邊緣，需注意高山症與體力"},
-      {name:"Mi Teleférico 纜車", coords:[-16.5000,-68.1193], desc:"世界最長城市纜車網，紅線、黃線、綠線各有不同視角，看La Paz盆地全景最划算的方式"},
-      {name:"月亮谷 Valle de la Luna", coords:[-16.5544,-68.0725], desc:"侵蝕地形形成的月球表面景觀，離市區不遠，半天可來回"}
-    ]
-  },
-  { id:"sucre", name:"Sucre", country:"玻利維亞", coords:[-19.0333,-65.2627], altitude:2810, days:"Day 67–71",
-    walk:[],
-    suggestions:[
-      {name:"25 de Mayo 廣場＋白色殖民建築", coords:[-19.0433,-65.2593], desc:"Sucre是玻利維亞的憲法首都，整座城市以白色殖民建築聞名，被列為世界遺產"},
-      {name:"自由之家 Casa de la Libertad", coords:[-19.0433,-65.2596], desc:"玻利維亞獨立宣言簽署地，就在主廣場旁"},
-      {name:"白堊紀公園 Parque Cretácico", coords:[-19.0075,-65.2394], desc:"水泥廠開挖出的巨大恐龍腳印牆，全世界密度最高的恐龍足跡遺址之一"},
-      {name:"ASUR 紡織博物館", coords:[-19.0453,-65.2611], desc:"展示玻利維亞原住民傳統織布工藝，可以看到現場示範"}
-    ]
-  },
-  { id:"uyuni", name:"Uyuni 烏尤尼", country:"玻利維亞", coords:[-20.4597,-66.8250], altitude:3650, days:"Day 72–74",
-    walk:[],
-    suggestions:[
-      {name:"火車墳場", coords:[-20.4460,-66.8836], desc:"生鏽的old火車頭散落荒野，通常是三日鹽湖團的第一站"},
-      {name:"天空之鏡＋印加瓦西島", coords:[-20.2400,-66.9350], desc:"世界最大鹽湖，雨季會形成鏡面倒影，島上有巨大仙人掌"},
-      {name:"紅湖與火烈鳥", coords:[-22.2000,-67.7833], desc:"高原湖泊，海拔約4200m，礦物質讓湖水呈現紅色，常見火烈鳥群聚"},
-      {name:"鹽旅館", coords:[-20.4597,-66.8250], desc:"整棟以鹽磚砌成的旅館，是三日團常見的住宿之一"}
-    ]
-  }
+const ALT_POINTS = [
+  {label:'Lima 利馬', m:0, c:'peru'},
+  {label:'Huacachina', m:400, c:'peru'},
+  {label:'Arequipa 阿雷基帕', m:2335, c:'peru'},
+  {label:'Ollantaytambo', m:2792, c:'peru'},
+  {label:'Aguas Calientes', m:2040, c:'peru'},
+  {label:'Cusco 庫斯科', m:3400, c:'peru'},
+  {label:'Pto. Maldonado', m:183, c:'peru'},
+  {label:'Puno 普諾', m:3827, c:'peru'},
+  {label:'Copacabana', m:3841, c:'bolivia'},
+  {label:'La Paz', m:3640, c:'bolivia'},
+  {label:'Sucre 蘇克雷', m:2810, c:'bolivia'},
+  {label:'Uyuni 烏尤尼', m:3656, c:'bolivia'},
 ];
 
-/* ===================== STATE ===================== */
-let activeCity = CITIES[0].id;
-let walkState = {}; // cityId -> ordered array of item objects the user has "加入行程"
-let customSuggestions = {}; // cityId -> array of user-added custom spots {name, desc, coords, custom:true}
-let syncedRows = {};
-let useGoogleMaps = false;
-let gmapInstance = null;
-let gmapMarkers = [];
-let gmapPolyline = null;
-
-/* ===================== ROUTE INSERTION (adds a new stop at the best position in the walking order) ===================== */
-function haversine(a, b){
-  const latMid = (a[0]+b[0])/2 * Math.PI/180;
-  const dLat = b[0]-a[0];
-  const dLng = (b[1]-a[1]) * Math.cos(latMid);
-  return Math.sqrt(dLat*dLat + dLng*dLng);
-}
-function cheapestInsertIndex(order, item){
-  if(order.length === 0) return 0;
-  let bestIdx = 0, bestCost = Infinity;
-  for(let i=0;i<=order.length;i++){
-    const prev = i>0 ? order[i-1] : null;
-    const next = i<order.length ? order[i] : null;
-    let cost;
-    if(prev && next) cost = haversine(prev.coords, item.coords) + haversine(item.coords, next.coords) - haversine(prev.coords, next.coords);
-    else if(prev) cost = haversine(prev.coords, item.coords);
-    else cost = haversine(item.coords, next.coords);
-    if(cost < bestCost){ bestCost = cost; bestIdx = i; }
-  }
-  return bestIdx;
-}
-
-/* ===================== EFFECTIVE (city.suggestions + customSuggestions is the pool; walkState tracks what's been "加入行程") ===================== */
-function allSuggestions(city){ return [...city.suggestions, ...(customSuggestions[city.id]||[])]; }
-function effectiveWalk(city){ return walkState[city.id] || []; }
-function effectiveSuggestions(city){
-  const names = new Set(effectiveWalk(city).map(i=>i.name));
-  return allSuggestions(city).filter(s => !names.has(s.name));
-}
-
-function hashJitter(name){
-  let h = 0;
-  for(let i=0;i<name.length;i++){ h = (h*31 + name.charCodeAt(i)) % 100000; }
-  const a = (h % 1000)/1000 - 0.5;
-  const b = ((h*7) % 1000)/1000 - 0.5;
-  return [a*0.03, b*0.03];
-}
-
-async function persistWalkState(){
-  const toSave = {};
-  Object.keys(walkState).forEach(cid=>{ toSave[cid] = walkState[cid].map(i=>i.name); });
-  try{ await saveValue('walk-state', JSON.stringify(toSave)); }catch(e){}
-}
-async function persistCustomSuggestions(){
-  try{ await saveValue('custom-suggestions', JSON.stringify(customSuggestions)); }catch(e){}
-}
-
-async function addCustomSpot(city, name, desc){
-  name = name.trim();
-  if(!name) return;
-  if(!customSuggestions[city.id]) customSuggestions[city.id] = [];
-  const [ja,jb] = hashJitter(name);
-  const item = { name, desc: desc.trim() || '你自己新增的景點', coords:[city.coords[0]+ja, city.coords[1]+jb], custom:true };
-  customSuggestions[city.id].push(item);
-  await persistCustomSuggestions();
-  refreshCityView(city);
-}
-async function removeCustomSpot(city, name){
-  if(!customSuggestions[city.id]) return;
-  customSuggestions[city.id] = customSuggestions[city.id].filter(i=>i.name!==name);
-  await persistCustomSuggestions();
-  // also remove from walk if it happened to be added there
-  if(walkState[city.id]) walkState[city.id] = walkState[city.id].filter(i=>i.name!==name);
-  await persistWalkState();
-  refreshCityView(city);
-}
-
-async function addToWalk(city, item){
-  if(!walkState[city.id]) walkState[city.id] = [];
-  const idx = cheapestInsertIndex(walkState[city.id], item);
-  walkState[city.id].splice(idx, 0, item);
-  await persistWalkState();
-  refreshCityView(city);
-}
-async function removeFromWalk(city, itemName){
-  if(!walkState[city.id]) return;
-  walkState[city.id] = walkState[city.id].filter(i=>i.name!==itemName);
-  await persistWalkState();
-  refreshCityView(city);
-}
-function refreshCityView(city){
-  renderMap(city);
-  renderWalkList(city);
-  renderSuggestions(city);
-}
-
-const GMAP_DARK_STYLE = [
-  {elementType:"geometry", stylers:[{color:"#1F2430"}]},
-  {elementType:"labels.text.stroke", stylers:[{color:"#161A22"}]},
-  {elementType:"labels.text.fill", stylers:[{color:"#ACA695"}]},
-  {featureType:"road", elementType:"geometry", stylers:[{color:"#2A303D"}]},
-  {featureType:"water", elementType:"geometry", stylers:[{color:"#15242B"}]},
-  {featureType:"poi", elementType:"geometry", stylers:[{color:"#232A22"}]},
-  {featureType:"administrative", elementType:"geometry.stroke", stylers:[{color:"#3A4150"}]}
-];
-
-/* ===================== STORAGE (works inside Claude artifacts AND on a self-hosted export) ===================== */
-async function loadValue(key){
-  try{
-    if(window.storage && window.storage.get){
-      const r = await window.storage.get(key, false);
-      return r ? r.value : null;
-    }
-  }catch(e){}
-  try{ return localStorage.getItem(key); }catch(e){ return null; }
-}
-async function saveValue(key, value){
-  try{
-    if(window.storage && window.storage.set){
-      await window.storage.set(key, value, false);
-      return;
-    }
-  }catch(e){}
-  try{ localStorage.setItem(key, value); }catch(e){}
-}
-
-/* ===================== GOOGLE MAPS (optional — user supplies their own API key) ===================== */
-function loadGoogleMapsScript(key){
-  return new Promise((resolve, reject)=>{
-    if(window.google && window.google.maps){ resolve(); return; }
-    const existing = document.getElementById('gmaps-script');
-    if(existing) existing.remove();
-    window.__gmapsCallback = ()=> resolve();
-    const script = document.createElement('script');
-    script.id = 'gmaps-script';
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(key)}&callback=__gmapsCallback`;
-    script.onerror = ()=> reject(new Error('script load failed'));
-    document.head.appendChild(script);
-    setTimeout(()=> reject(new Error('timeout')), 8000);
-  });
-}
-
-async function applyGoogleMaps(key){
-  const status = document.getElementById('gmapsStatus');
-  if(!key){ status.textContent = '請先貼上金鑰'; status.className = 'sync-status err'; return; }
-  status.textContent = '載入 Google 地圖中…';
-  status.className = 'sync-status';
-  try{
-    await loadGoogleMapsScript(key);
-    useGoogleMaps = true;
-    document.getElementById('mapSvg').style.display = 'none';
-    document.getElementById('gmapDiv').style.display = 'block';
-    await saveValue('gmaps-api-key', key);
-    status.textContent = '✓ 已套用真實 Google 地圖';
-    status.className = 'sync-status ok';
-    renderMap(CITIES.find(c=>c.id===activeCity));
-  } catch(err){
-    useGoogleMaps = false;
-    document.getElementById('mapSvg').style.display = 'block';
-    document.getElementById('gmapDiv').style.display = 'none';
-    status.textContent = '這個瀏覽環境連不到 Google 地圖伺服器，已維持示意地圖 — 匯出成獨立網頁、放到你自己的網站後通常就能正常顯示';
-    status.className = 'sync-status err';
-    console.error(err);
-  }
-}
-
-function renderGoogleMap(city){
-  const info = document.getElementById('mapInfo');
-  info.textContent = '點地圖上的標記查看名稱與備註';
-  const div = document.getElementById('gmapDiv');
-
-  if(!gmapInstance){
-    gmapInstance = new google.maps.Map(div, {
-      center:{lat:city.coords[0], lng:city.coords[1]}, zoom:12,
-      styles:GMAP_DARK_STYLE, mapTypeControl:false, streetViewControl:false, fullscreenControl:false
-    });
-  }
-  gmapMarkers.forEach(m=>m.setMap(null)); gmapMarkers = [];
-  if(gmapPolyline){ gmapPolyline.setMap(null); gmapPolyline = null; }
-
-  const bounds = new google.maps.LatLngBounds();
-  const walk = effectiveWalk(city);
-  const suggestions = effectiveSuggestions(city);
-
-  if(walk.length){
-    const path = walk.map(p=>({lat:p.coords[0], lng:p.coords[1]}));
-    gmapPolyline = new google.maps.Polyline({ path, strokeColor:'#C1652F', strokeWeight:3, strokeOpacity:0.85, map:gmapInstance });
-    walk.forEach((p,i)=>{
-      const marker = new google.maps.Marker({
-        position:{lat:p.coords[0], lng:p.coords[1]}, map:gmapInstance,
-        label:{text:String(i+1), color:'#161A22', fontWeight:'700', fontSize:'11px'},
-        icon:{ path:google.maps.SymbolPath.CIRCLE, scale:11, fillColor:'#C1652F', fillOpacity:1, strokeColor:'#161A22', strokeWeight:2 }
-      });
-      marker.addListener('click', ()=>{
-        info.innerHTML = `<div class="mi-name">${p.name}</div>${p.desc?`<div class="mi-note">${p.desc}</div>`:''}`;
-      });
-      gmapMarkers.push(marker);
-      bounds.extend(marker.getPosition());
-    });
-  }
-  suggestions.forEach(p=>{
-    const marker = new google.maps.Marker({
-      position:{lat:p.coords[0], lng:p.coords[1]}, map:gmapInstance,
-      icon:{ path:google.maps.SymbolPath.CIRCLE, scale:6.5, fillColor:'#3E7C8C', fillOpacity:1, strokeColor:'#161A22', strokeWeight:2 }
-    });
-    marker.addListener('click', ()=>{
-      info.innerHTML = `<div class="mi-name">${p.name}</div><div class="mi-note">${p.desc}</div>`;
-    });
-    gmapMarkers.push(marker);
-    bounds.extend(marker.getPosition());
-  });
-
-  if(!bounds.isEmpty()){ gmapInstance.fitBounds(bounds, 40); }
-  else{ gmapInstance.setCenter({lat:city.coords[0], lng:city.coords[1]}); }
-}
-
-/* ===================== ELEVATION NAV (signature) ===================== */
-function renderElevationNav(){
+function drawElevation(){
   const svg = document.getElementById('elevSvg');
-  const w = 1750, h = 170, padX = 55, padTop = 26, padBottom = 46;
-  const maxAlt = Math.max(...CITIES.map(c=>c.altitude), 1000);
-  const n = CITIES.length;
-  const stepX = (w - padX*2) / (n-1);
-  const yFor = alt => padTop + (1 - alt/maxAlt) * (h - padTop - padBottom);
+  const W = 980, H = 220, padL = 10, padR = 10, padT = 24, padB = 34;
+  const maxM = 4200;
+  const n = ALT_POINTS.length;
+  const xStep = (W - padL - padR) / (n - 1);
+  const yFor = m => padT + (1 - m/maxM) * (H - padT - padB);
 
-  let pathD = "";
-  CITIES.forEach((c,i)=>{
-    const x = padX + i*stepX;
-    const y = yFor(c.altitude);
-    pathD += (i===0 ? `M${x},${y}` : ` L${x},${y}`);
+  let path = '';
+  let area = `M ${padL} ${H-padB} `;
+  ALT_POINTS.forEach((p,i)=>{
+    const x = padL + i*xStep, y = yFor(p.m);
+    path += (i===0?'M':'L') + ' ' + x + ' ' + y + ' ';
+    area += 'L ' + x + ' ' + y + ' ';
   });
-  const areaD = pathD + ` L${padX+(n-1)*stepX},${h-padBottom} L${padX},${h-padBottom} Z`;
+  area += `L ${padL + (n-1)*xStep} ${H-padB} Z`;
 
-  let dots = "";
-  CITIES.forEach((c,i)=>{
-    const x = padX + i*stepX;
-    const y = yFor(c.altitude);
-    dots += `
-      <g class="elev-city-btn" data-city="${c.id}" transform="translate(${x},0)">
-        <rect x="-30" y="0" width="60" height="${h}" fill="transparent"></rect>
-        <circle class="dot" cx="0" cy="${y}" r="5" fill="var(--paper)"></circle>
-        <text class="lbl" x="0" y="${h-28}" text-anchor="middle">${c.name.split(' ')[0]}</text>
-        <text class="lbl2" x="0" y="${h-16}" text-anchor="middle">${c.country}</text>
-        <text class="lbl2 mono" x="0" y="${y-11}" text-anchor="middle" font-family="JetBrains Mono">${c.altitude}m</text>
-      </g>`;
-  });
-
-  svg.innerHTML = `
+  let svgHtml = `
+    <line x1="${padL}" y1="${yFor(3000)}" x2="${W-padR}" y2="${yFor(3000)}" stroke="#B9862F" stroke-width="1" stroke-dasharray="3 4" opacity="0.55"/>
+    <path d="${area}" fill="url(#g1)" opacity="0.5"/>
+    <path d="${path}" fill="none" stroke="#B9862F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
     <defs>
-      <linearGradient id="elevGrad" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#D4A24C" stop-opacity="0.5"/>
-        <stop offset="100%" stop-color="#D4A24C" stop-opacity="0"/>
+      <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#B9862F" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#B9862F" stop-opacity="0"/>
       </linearGradient>
     </defs>
-    <path class="elev-area" d="${areaD}"></path>
-    <path class="elev-path" d="${pathD}"></path>
-    ${dots}
   `;
 
-  svg.querySelectorAll('.elev-city-btn').forEach(el=>{
-    el.addEventListener('click', ()=> selectCity(el.getAttribute('data-city')));
-  });
-}
-
-/* ===================== CITY RAIL ===================== */
-function renderCityRail(){
-  const rail = document.getElementById('cityRail');
-  rail.innerHTML = CITIES.map(c=>`<button class="city-chip" data-city="${c.id}">${c.name}</button>`).join('');
-  rail.querySelectorAll('.city-chip').forEach(el=>{
-    el.addEventListener('click', ()=> selectCity(el.getAttribute('data-city')));
-  });
-}
-
-/* ===================== MAP (self-contained SVG — no external tile images) ===================== */
-/* Renders a lightweight topographic sketch + projected pins for the active city.
-   No external map images are fetched, so it always renders regardless of network policy. */
-function makeContourPaths(seed){
-  let s = seed;
-  const rand = () => { s = (s*9301+49297)%233280; return s/233280; };
-  let paths = "";
-  for(let i=0;i<6;i++){
-    const baseY = 40 + i*65 + rand()*20;
-    let d = `M -20 ${baseY}`;
-    for(let x=0;x<=680;x+=40){
-      const y = baseY + Math.sin((x/90)+i*1.7+rand())*18;
-      d += ` L ${x} ${y}`;
-    }
-    paths += `<path class="contour" d="${d}"></path>`;
-  }
-  return paths;
-}
-
-function renderMap(city){
-  if(useGoogleMaps && window.google && window.google.maps){
-    renderGoogleMap(city);
-  } else {
-    renderSvgMap(city);
-  }
-}
-
-function renderSvgMap(city){
-  const svg = document.getElementById('mapSvg');
-  const info = document.getElementById('mapInfo');
-  info.textContent = '點地圖上的標記查看名稱與備註';
-
-  const walk = effectiveWalk(city);
-  const suggestions = effectiveSuggestions(city);
-
-  const allPts = [...walk.map(p=>p.coords), ...suggestions.map(p=>p.coords)];
-  if(!allPts.length){ svg.innerHTML = makeContourPaths(city.id.length); return; }
-
-  let minLat = Math.min(...allPts.map(p=>p[0])), maxLat = Math.max(...allPts.map(p=>p[0]));
-  let minLng = Math.min(...allPts.map(p=>p[1])), maxLng = Math.max(...allPts.map(p=>p[1]));
-  const padLat = Math.max((maxLat-minLat)*0.25, 0.03);
-  const padLng = Math.max((maxLng-minLng)*0.25, 0.03);
-  minLat-=padLat; maxLat+=padLat; minLng-=padLng; maxLng+=padLng;
-
-  const W=640,H=420, mx=50,my=44;
-  const project = (coords) => {
-    const [lat,lng] = coords;
-    const x = mx + ((lng-minLng)/(maxLng-minLng)) * (W-mx*2);
-    const y = my + (1 - (lat-minLat)/(maxLat-minLat)) * (H-my*2);
-    return [x,y];
-  };
-
-  let html = makeContourPaths(city.id.length);
-
-  if(walk.length){
-    const pts = walk.map(p=>project(p.coords));
-    const d = pts.map((pt,i)=> (i===0?'M':'L')+pt[0]+','+pt[1]).join(' ');
-    html += `<path class="map-route" d="${d}"></path>`;
-    walk.forEach((p,i)=>{
-      const [x,y] = project(p.coords);
-      html += `
-        <g class="map-pin-walk" data-name="${p.name.replace(/"/g,'&quot;')}" data-note="${(p.desc||'').replace(/"/g,'&quot;')}" transform="translate(${x},${y})">
-          <circle r="11"></circle>
-          <text y="0.5">${i+1}</text>
-        </g>`;
-    });
-  }
-  suggestions.forEach(p=>{
-    const [x,y] = project(p.coords);
-    html += `
-      <g class="map-pin-sugg" data-name="${p.name.replace(/"/g,'&quot;')}" data-note="${(p.desc||'').replace(/"/g,'&quot;')}" transform="translate(${x},${y})">
-        <circle r="6.5"></circle>
-      </g>`;
+  ALT_POINTS.forEach((p,i)=>{
+    const x = padL + i*xStep, y = yFor(p.m);
+    const dotColor = p.c === 'bolivia' ? '#1E7F82' : '#B8442F';
+    const above = i % 2 === 0;
+    svgHtml += `
+      <circle cx="${x}" cy="${y}" r="4.5" fill="${dotColor}" stroke="#F7F3E8" stroke-width="1.5"/>
+      <text class="elev-pt-label mono" x="${x}" y="${above ? y-20 : y+30}" text-anchor="middle">${p.m.toLocaleString()}m</text>
+      <text class="elev-pt-city" x="${x}" y="${above ? y-8 : y+42}" text-anchor="middle">${p.label}</text>
+    `;
   });
 
-  svg.innerHTML = html;
-
-  svg.querySelectorAll('.map-pin-walk, .map-pin-sugg').forEach(el=>{
-    el.addEventListener('click', ()=>{
-      const name = el.getAttribute('data-name');
-      const note = el.getAttribute('data-note');
-      info.innerHTML = `<div class="mi-name">${name}</div>${note ? `<div class="mi-note">${note}</div>` : ''}`;
-    });
-  });
+  svg.innerHTML = svgHtml;
 }
+drawElevation();
 
-/* ===================== PANELS ===================== */
-function renderWalkList(city){
-  const el = document.getElementById('walkList');
-  const walk = effectiveWalk(city);
-  if(!walk.length){
-    el.innerHTML = `<li class="empty-note" style="border-top:none;">目前還沒有加入任何景點。從右邊「值得考慮」按「加入行程」，會自動幫你排進目前路線裡最順的位置。</li>`;
-    return;
-  }
-  el.innerHTML = walk.map(p=>`
-    <li>
-      <div style="flex:1;">
-        <div class="wl-name">${p.name}</div>
-        <div class="wl-note">${p.desc||''}</div>
+// ---------------- itinerary data ----------------
+const LEGS = [
+  {
+    id:'transit', country:'transit', num:'00', name:'移動日', en:'International Transit',
+    dateRange:'9/16', dayRange:'Day 0', alt:null,
+    days:[
+      {date:'9/16 週三', day:'Day 0', loc:'台北 → 首爾 → 洛杉磯 → 利馬', stay:'機上過夜', activity:'三段國際航班接力：\n台北–首爾 13:20–16:50\n首爾–洛杉磯 19:40–14:50\n洛杉磯–利馬 21:30–08:05（9/17抵達）'}
+    ]
+  },
+  {
+    id:'lima', country:'peru', num:'01', name:'利馬', en:'Lima', dateRange:'9/17 – 9/21', dayRange:'Day 1–5', alt:'0m',
+    days:[
+      {date:'9/17 週四', day:'Day 1', loc:'Lima 利馬', stay:'利馬', activity:'抵達利馬；辦理玻利維亞簽證（玻利維亞駐祕魯領事館，週一至週五 08:30–16:30）'},
+      {date:'9/18 週五', day:'Day 2', loc:'Lima 利馬', stay:'利馬', activity:'利馬歷史中心 Centro Histórico（世界遺產核心區，步行可達）\n· 主廣場 Plaza Mayor\n· 利馬大教堂（皮薩羅之墓）\n· 總統府（衛兵交接）\n· 聖方濟修道院＋地下墓穴'},
+      {date:'9/19 週六', day:'Day 3', loc:'Lima 利馬', stay:'利馬', activity:'米拉弗洛雷斯 Miraflores（半天～1天）\n· 愛情公園、濱海步道、Larcomar 懸崖商場、肯尼迪公園、普克亞納金字塔\n\n巴蘭科 Barranco（半天～晚上）\n· 嘆息橋、海岸線夕陽＋夜生活'},
+      {date:'9/20 週日', day:'Day 4', loc:'Lima 利馬', stay:'利馬', activity:'博物館＆進階景點（可插空）\n· 拉爾科博物館（前哥倫布文明收藏）\n· 魔法水舞公園（晚間燈光噴泉秀）\n· Pachacamac 神殿（郊區古文明遺址）'},
+      {date:'9/21 週一', day:'Day 5', loc:'Lima 利馬', stay:'利馬', activity:'聖伊西德羅 San Isidro（半天，彈性）\n· 橄欖公園 Parque El Olivar'},
+    ]
+  },
+  {
+    id:'paracas', country:'peru', num:'02', name:'帕拉卡斯・瓦卡奇納', en:'Paracas & Huacachina', dateRange:'9/22 – 9/25', dayRange:'Day 6–9', alt:'0–400m',
+    days:[
+      {date:'9/22 週二', day:'Day 6', loc:'利馬 → 帕拉卡斯（4hr）', stay:'帕拉卡斯', activity:'Pisco 酒莊\n帕拉卡斯小漁村＋自然景觀\nBallestas Islands 看海獅、企鵝（鳥島，約半天～1天）'},
+      {date:'9/23 週三', day:'Day 7', loc:'Paracas 帕拉卡斯', stay:'帕拉卡斯', activity:'自由日'},
+      {date:'9/24 週四', day:'Day 8', loc:'帕拉卡斯 → 伊卡（轉車）→ Huacachina', stay:'Huacachina 沙漠綠洲', activity:''},
+      {date:'9/25 週五', day:'Day 9', loc:'Huacachina 沙漠綠洲', stay:'Huacachina 沙漠綠洲', activity:''},
+    ]
+  },
+  {
+    id:'arequipa', country:'peru', num:'03', name:'阿雷基帕', en:'Arequipa', dateRange:'9/26 – 10/2', dayRange:'Day 10–16', alt:'2,335m',
+    poi:[
+      {area:'歷史中心 Centro Histórico', desc:'白色火山石建築，步行可串完', spots:[
+        {name:'Plaza de Armas', tag:'主廣場，日落時石材泛粉光'},
+        {name:'Basílica大教堂', tag:'廣場旁地標'},
+        {name:'La Compañía 耶穌會教堂', tag:'廣場旁，殖民雕刻精緻'},
+        {name:'San Camilo 市場', tag:'在地生活感，果汁、熟食'},
+      ]},
+      {area:'Yanahuara 亞納瓦拉區', desc:'從主廣場步行約30分鐘', spots:[
+        {name:'Mirador de Yanahuara', tag:'白拱門框住米斯提火山，經典拍照點'},
+        {name:'San Lázaro 老城區', tag:'城中最古老街區，鄰近可順走'},
+      ]},
+      {area:'郊區半天行程', desc:'需搭車或包車前往', spots:[
+        {name:'Sabandía 磨坊', tag:'殖民時期水磨坊'},
+        {name:'Mundo Alpaca', tag:'羊駝主題園區'},
+        {name:'Mirador Sachaca', tag:'較安靜的觀景台選項'},
+      ]},
+      {area:'延伸行程（需多留1–2天）', desc:'從阿雷基帕出發的一日/兩日團', spots:[
+        {name:'科爾卡峽谷 Colca Canyon', tag:'看安地斯神鷹，清晨出發'},
+      ]},
+    ],
+    days:[
+      {date:'9/26 週六', day:'Day 10', loc:'Huacachina → 伊卡（2hr）→ 夜車前往阿雷基帕', stay:'夜車', activity:'', flag:'$6083 已刷卡（8/5）'},
+      {date:'9/27 週日', day:'Day 11', loc:'Arequipa 阿雷基帕', stay:'阿雷基帕', activity:'抵達休息'},
+      {date:'9/28 週一', day:'Day 12', loc:'Arequipa 阿雷基帕', stay:'阿雷基帕', activity:'Santa Catalina 修道院'},
+      {date:'9/29 週二', day:'Day 13', loc:'Arequipa 阿雷基帕', stay:'阿雷基帕 · 2,335m', activity:'城市與火山景觀'},
+      {date:'9/30 週三', day:'Day 14', loc:'Arequipa 阿雷基帕', stay:'阿雷基帕 · 2,335m', activity:''},
+      {date:'10/1 週四', day:'Day 15', loc:'Arequipa 阿雷基帕', stay:'阿雷基帕', activity:''},
+      {date:'10/2 週五', day:'Day 16', loc:'Arequipa 阿雷基帕', stay:'阿雷基帕', activity:''},
+    ]
+  },
+  {
+    id:'sacredvalley', country:'peru', num:'04', name:'聖谷與馬丘比丘', en:'Sacred Valley & Machu Picchu', dateRange:'10/3 – 10/10', dayRange:'Day 17–24', alt:'2,040–2,792m',
+    poi:[
+      {area:'Chinchero 欽切羅', desc:'聖谷北側入口，紡織村落', spots:[
+        {name:'Chinchero 遺址＋教堂', tag:'印加梯田疊殖民教堂'},
+        {name:'紡織示範', tag:'天然染色、傳統織法'},
+      ]},
+      {area:'Moray + Maras（常合併一天）', desc:'兩地相距約20分鐘車程', spots:[
+        {name:'Moray 梯田', tag:'印加農業實驗場，同心圓梯田'},
+        {name:'Maras 鹽田', tag:'數千格鹽池，地下泉水引流'},
+      ]},
+      {area:'Pisac 皮薩克', desc:'聖谷東側，市集日為週二／週四／週日', spots:[
+        {name:'Pisac 遺址', tag:'山頭梯田＋墓穴群'},
+        {name:'Pisac 市集', tag:'手工藝與在地食材'},
+      ]},
+      {area:'Urubamba 烏魯班巴（已排住宿）', desc:'聖谷中心市鎮，適合作為據點', spots:[
+        {name:'烏魯班巴市場', tag:'在地日常採買'},
+      ]},
+      {area:'Ollantaytambo 鎮（已排）', desc:'現存唯一保留原始印加城鎮格局的聚落', spots:[
+        {name:'Ollantaytambo 遺址堡壘', tag:'階梯狀神廟，登高看全鎮格局'},
+      ]},
+    ],
+    days:[
+      {date:'10/3 週六', day:'Day 17', loc:'阿雷基帕 → 庫斯科 → Ollantaytambo', stay:'夜車前往庫斯科', activity:''},
+      {date:'10/4 週日', day:'Day 18', loc:'Ollantaytambo', stay:'Urubamba', activity:''},
+      {date:'10/5 週一', day:'Day 19', loc:'Ollantaytambo', stay:'Urubamba', activity:''},
+      {date:'10/6 週二', day:'Day 20', loc:'Ollantaytambo', stay:'Urubamba', activity:''},
+      {date:'10/7 週三', day:'Day 21', loc:'Ollantaytambo', stay:'Aguas Calientes', activity:'', flag:'入住時付款，尚未付款'},
+      {date:'10/8 週四', day:'Day 22', loc:'Ollantaytambo', stay:'Aguas Calientes（Hotel.com 訂房）', activity:''},
+      {date:'10/9 週五', day:'Day 23', loc:'Ollantaytambo 出發，搭火車到 Aguas Calientes → 馬丘比丘', stay:'Ollantaytambo', activity:'', flag:'8/18 訂房可能已被扣款，需查帳單'},
+      {date:'10/10 週六', day:'Day 24', loc:'Ollantaytambo', stay:'Ollantaytambo', activity:'', flag:'Hotel.com 訂房：頁面顯示入住付款，但已被扣款，待釐清'},
+    ]
+  },
+  {
+    id:'cusco', country:'peru', num:'05', name:'庫斯科・西語課程', en:'Cusco — Spanish School', dateRange:'10/11 – 11/7', dayRange:'Day 25–52', alt:'約 3,400m',
+    isWeekly:true,
+    poi:[
+      {area:'Plaza de Armas 周邊', desc:'課程之餘可步行走完', spots:[
+        {name:'庫斯科大教堂', tag:'廣場旁地標'},
+        {name:'La Compañía 教堂', tag:'廣場另一側'},
+        {name:'Coricancha 太陽神殿', tag:'印加石造基座＋殖民教堂'},
+      ]},
+      {area:'San Blas 藝術區', desc:'從廣場步行上坡約10–15分鐘，適合週末散步', spots:[
+        {name:'San Blas 廣場＋教堂', tag:'工匠聚集地，週末小市集'},
+        {name:'十二角石', tag:'San Blas路上，精密印加石砌工藝'},
+      ]},
+      {area:'城郊四遺址（常安排半天）', desc:'四處相距不遠，多數團會一次走完', spots:[
+        {name:'Sacsayhuamán', tag:'最大型的印加石造遺址'},
+        {name:'Q\'enqo', tag:'儀式用石灰岩遺跡'},
+        {name:'Puka Pukara', tag:'紅色石造哨站'},
+        {name:'Tambomachay', tag:'印加水道遺址'},
+      ]},
+      {area:'白基督像 Cristo Blanco', desc:'鄰近Sacsayhuamán，可順路安排', spots:[
+        {name:'白基督像觀景台', tag:'俯瞰庫斯科全城'},
+      ]},
+    ],
+    days:[
+      {date:'10/11 週日', day:'Day 25', loc:'Ollantaytambo → 庫斯科', stay:'homestay', activity:'入住 homestay，展開西語課程階段'},
+    ]
+  },
+  {
+    id:'amazon', country:'peru', num:'06', name:'亞馬遜雨林', en:'Puerto Maldonado / Amazon', dateRange:'11/8 – 11/11', dayRange:'Day 53–56', alt:'183m',
+    poi:[
+      {area:'Sandoval 湖區', desc:'從碼頭徒步約3公里進入，再划船遊湖', spots:[
+        {name:'Sandoval 湖', tag:'牛軛湖，可能遇見巨獺家族'},
+        {name:'夜間找凱門鱷', tag:'手電筒夜巡活動'},
+      ]},
+      {area:'Madre de Dios 河沿岸', desc:'多數行程會順路安排', spots:[
+        {name:'猴島 Isla de los Monos', tag:'捲尾猴聚集'},
+        {name:'河岸夜巡', tag:'找水豚、白凱門鱷'},
+      ]},
+      {area:'Tambopata 上游（需較長天數）', desc:'距離其他景點較遠，通常需獨立安排3天以上', spots:[
+        {name:'Chuncho 金剛鸚鵡舐土崖', tag:'大批金剛鸚鵡聚集，清晨最佳'},
+      ]},
+    ],
+    days:[
+      {date:'11/8 週日', day:'Day 53', loc:'庫斯科 → Puerto Maldonado', stay:'Puerto Maldonado', activity:''},
+      {date:'11/9 週一', day:'Day 54', loc:'Puerto Maldonado', stay:'Puerto Maldonado', activity:'亞馬遜雨林行程'},
+      {date:'11/10 週二', day:'Day 55', loc:'Puerto Maldonado', stay:'Puerto Maldonado', activity:'亞馬遜雨林行程'},
+      {date:'11/11 週三', day:'Day 56', loc:'Puerto Maldonado', stay:'Puno（跨區移動）', activity:'亞馬遜雨林行程'},
+    ]
+  },
+  {
+    id:'puno', country:'peru', num:'07', name:'普諾・的的喀喀湖', en:'Puno & Titicaca', dateRange:'11/12 – 11/14', dayRange:'Day 57–59', alt:'3,827m',
+    poi:[
+      {area:'湖上島嶼（多為一日船行程，可選組合）', desc:'三島風格不同，常見二選一或三島一日遊', spots:[
+        {name:'Uros 蘆葦浮島', tag:'最靠近普諾，傳統手工蘆葦島'},
+        {name:'Taquile 島', tag:'UNESCO認證紡織技藝，需健行'},
+        {name:'Amantaní 島', tag:'可安排住宿體驗，農業聚落'},
+      ]},
+    ],
+    days:[
+      {date:'11/12 週四', day:'Day 57', loc:'Puerto Maldonado → Puno', stay:'—', activity:''},
+      {date:'11/13 週五', day:'Day 58', loc:'Puno 普諾', stay:'Puno', activity:''},
+      {date:'11/14 週六', day:'Day 59', loc:'Puno 普諾', stay:'Puno', activity:''},
+    ]
+  },
+  {
+    id:'bolivia1', country:'bolivia', num:'08', name:'科帕卡瓦納・太陽島・拉巴斯', en:'Copacabana · Isla del Sol · La Paz', dateRange:'11/15 – 11/21', dayRange:'Day 60–66', alt:'3,640–3,841m',
+    poi:[
+      {area:'Copacabana 鎮', desc:'太陽島的門戶小鎮', spots:[
+        {name:'科帕卡瓦納大教堂', tag:'摩爾式建築，朝聖地標'},
+      ]},
+      {area:'Isla del Sol 太陽島', desc:'無車無柏油路，南北兩端風格不同', spots:[
+        {name:'Yumani（南端）', tag:'印加階梯＋泉水，多數人由此上島'},
+        {name:'Challapampa（北端）', tag:'較僻靜，印加遺跡分布'},
+      ]},
+      {area:'La Paz 舊城區', desc:'步行可串，市集氣氛濃厚', spots:[
+        {name:'女巫市場 Mercado de las Brujas', tag:'傳統藥草與儀式用品'},
+        {name:'San Francisco 教堂', tag:'舊城地標'},
+      ]},
+      {area:'La Paz 郊區／制高點', desc:'需搭纜車或包車', spots:[
+        {name:'Mi Teleférico 纜車', tag:'世界最高纜車網絡，可眺望全城'},
+        {name:'月亮谷 Valle de la Luna', tag:'侵蝕地形，市郊約半天行程'},
+      ]},
+    ],
+    days:[
+      {date:'11/15 週日', day:'Day 60', loc:'Puno → Copacabana（跨國界）', stay:'Copacabana', activity:''},
+      {date:'11/16 週一', day:'Day 61', loc:'Copacabana', stay:'Copacabana', activity:''},
+      {date:'11/17 週二', day:'Day 62', loc:'Isla del Sol', stay:'Isla del Sol', activity:''},
+      {date:'11/18 週三', day:'Day 63', loc:'Isla del Sol → La Paz', stay:'La Paz', activity:''},
+      {date:'11/19 週四', day:'Day 64', loc:'La Paz', stay:'La Paz', activity:''},
+      {date:'11/20 週五', day:'Day 65', loc:'La Paz', stay:'La Paz', activity:''},
+      {date:'11/21 週六', day:'Day 66', loc:'La Paz', stay:'La Paz', activity:''},
+    ]
+  },
+  {
+    id:'sucreuyuni', country:'bolivia', num:'09', name:'蘇克雷・烏尤尼', en:'Sucre & Uyuni', dateRange:'11/22 – 11/29', dayRange:'Day 67–74', alt:'2,810–3,656m',
+    poi:[
+      {area:'Sucre 舊城中心', desc:'白城歷史核心，步行可達', spots:[
+        {name:'Plaza 25 de Mayo', tag:'城市心臟，周邊建築環繞'},
+        {name:'Casa de la Libertad', tag:'玻利維亞獨立宣言簽署地'},
+        {name:'大教堂', tag:'廣場旁，可登頂看全城'},
+      ]},
+      {area:'La Recoleta 區', desc:'從主廣場步行上坡約15分鐘', spots:[
+        {name:'La Recoleta 修道院', tag:'17世紀修道院＋千年雪松'},
+        {name:'觀景台', tag:'俯瞰白色屋頂全城'},
+      ]},
+      {area:'郊區景點', desc:'需搭車或包車前往', spots:[
+        {name:'白堊紀公園 Parque Cretácico', tag:'大量恐龍足跡化石'},
+      ]},
+      {area:'Uyuni 鹽湖行程（常見1–3天團）', desc:'從烏尤尼鎮出發的經典路線', spots:[
+        {name:'火車墳場', tag:'鏽蝕蒸汽火車殘骸'},
+        {name:'Colchani 鹽產小鎮', tag:'鹽田加工示範'},
+        {name:'Incahuasi 仙人掌島', tag:'鹽湖中央的巨型仙人掌島'},
+        {name:'Tunupa 火山＋鹽湖飯店', tag:'多天團才會安排，可過夜'},
+      ]},
+    ],
+    days:[
+      {date:'11/22 週日', day:'Day 67', loc:'La Paz → Sucre', stay:'Sucre', activity:''},
+      {date:'11/23 週一', day:'Day 68', loc:'Sucre', stay:'Sucre', activity:''},
+      {date:'11/24 週二', day:'Day 69', loc:'Sucre', stay:'Sucre', activity:''},
+      {date:'11/25 週三', day:'Day 70', loc:'Sucre', stay:'—', activity:''},
+      {date:'11/26 週四', day:'Day 71', loc:'Sucre', stay:'—', activity:''},
+      {date:'11/27 週五', day:'Day 72', loc:'Uyuni', stay:'—', activity:''},
+      {date:'11/28 週六', day:'Day 73', loc:'Uyuni', stay:'—', activity:''},
+      {date:'11/29 週日', day:'Day 74', loc:'Uyuni', stay:'—', activity:''},
+    ]
+  },
+];
+
+function dayCard(d){
+  return `
+    <div class="day-card">
+      <div class="day-top">
+        <span class="day-date mono">${d.date}</span>
+        <span class="day-num mono">${d.day}</span>
       </div>
-      <button class="add-btn" data-remove="${encodeURIComponent(p.name)}" style="align-self:center;">移出</button>
-    </li>
-  `).join('');
-  el.querySelectorAll('[data-remove]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      removeFromWalk(city, decodeURIComponent(btn.getAttribute('data-remove')));
-    });
-  });
+      <div class="day-loc">${d.loc}</div>
+      ${d.stay && d.stay !== '—' ? `<div class="day-stay">${d.stay}</div>` : ''}
+      ${d.activity ? `<div class="day-activity">${d.activity}</div>` : ''}
+      ${d.flag ? `<div class="day-flag">⚑ ${d.flag}</div>` : ''}
+    </div>
+  `;
 }
 
-function renderSuggestions(city){
-  const el = document.getElementById('suggGrid');
-  const suggestions = effectiveSuggestions(city);
-  el.innerHTML = (suggestions.length ? suggestions.map(p=>`
-    <div class="sugg-card">
-      <div class="sc-top">
-        <div>
-          <div class="sc-name">${p.name}${p.custom?' <span style="color:var(--gold);font-size:10.5px;font-family:\'JetBrains Mono\',monospace;">自訂</span>':''}</div>
-          <div class="sc-desc">${p.desc}</div>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end;">
-          <button class="add-btn" data-add="${encodeURIComponent(p.name)}">加入行程</button>
-          ${p.custom ? `<button class="add-btn" data-del="${encodeURIComponent(p.name)}" style="border-color:var(--terracotta); color:#E8A98A;">刪除</button>` : ''}
-        </div>
+function weeklyBlock(){
+  const week = [
+    {l:'一',t:'study'},{l:'二',t:'study'},{l:'三',t:'study'},{l:'四',t:'study'},{l:'五',t:'study'},
+    {l:'六',t:'free'},{l:'日',t:'free'}
+  ];
+  return `
+    <div class="week-card">
+      <p>10/12 起至 11/7，以 homestay 為據點的西語課程週期（Curso de español）。表格中平日多排課程、週末多留白，推測為固定週間上課、週末彈性安排的節奏：</p>
+      <div class="week-grid">
+        ${week.map(w=>`<div class="lbl">${w.l}</div>`).join('')}
+        ${week.map(w=>`<div class="d ${w.t}">${w.t==='study' ? '上課' : '自由'}</div>`).join('')}
       </div>
     </div>
-  `).join('') : `<p class="empty-note">這個城市的建議景點都已經加入行程了。</p>`);
-
-  el.querySelectorAll('[data-add]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      const name = decodeURIComponent(btn.getAttribute('data-add'));
-      const item = allSuggestions(city).find(s=>s.name===name);
-      if(item) addToWalk(city, item);
-    });
-  });
-  el.querySelectorAll('[data-del]').forEach(btn=>{
-    btn.addEventListener('click', ()=>{
-      removeCustomSpot(city, decodeURIComponent(btn.getAttribute('data-del')));
-    });
-  });
-
-  const nameInput = document.getElementById('customSpotName');
-  const descInput = document.getElementById('customSpotDesc');
-  const addBtn = document.getElementById('customSpotAddBtn');
-  if(addBtn){
-    addBtn.onclick = ()=>{
-      if(!nameInput.value.trim()) return;
-      addCustomSpot(city, nameInput.value, descInput.value);
-      nameInput.value=''; descInput.value='';
-    };
-  }
-}
-
-function renderRawTable(city){
-  const wrap = document.getElementById('rawTableWrap');
-  const rows = syncedRows[city.id];
-  if(!rows || !rows.length){
-    wrap.innerHTML = `<p class="empty-note">尚未同步，或這個城市在試算表中查無資料列。點上方「從 Google 試算表同步」試試看。</p>`;
-    return;
-  }
-  wrap.innerHTML = `
-    <table class="raw-table">
-      <thead><tr><th>日期</th><th>Day</th><th>地點</th><th>住宿</th><th>行程/活動</th></tr></thead>
-      <tbody>
-        ${rows.map(r=>`<tr><td>${r.date||''}</td><td>${r.day||''}</td><td>${r.location||''}</td><td>${r.accommodation||''}</td><td>${r.activity||''}</td></tr>`).join('')}
-      </tbody>
-    </table>
   `;
 }
 
-/* ===================== SELECT CITY ===================== */
-function selectCity(id){
-  activeCity = id;
-  const city = CITIES.find(c=>c.id===id);
-  if(!city) return;
-
-  document.querySelectorAll('.city-chip').forEach(el=>{
-    el.classList.toggle('active', el.getAttribute('data-city')===id);
-  });
-  document.querySelectorAll('.elev-city-btn').forEach(el=>{
-    el.classList.toggle('active', el.getAttribute('data-city')===id);
-  });
-
-  document.getElementById('cityName').textContent = city.name;
-  document.getElementById('cityCountry').textContent = city.country;
-  document.getElementById('cityAlt').textContent = city.altitude>0 ? `海拔 ${city.altitude}m` : '海平面附近';
-  document.getElementById('cityDays').textContent = city.days;
-
-  renderMap(city);
-  renderWalkList(city);
-  renderSuggestions(city);
-  renderRawTable(city);
-
-  document.getElementById('clearWalkBtn').onclick = async ()=>{
-    walkState[city.id] = [];
-    await persistWalkState();
-    refreshCityView(city);
-  };
+function poiBlock(leg){
+  if(!leg.poi || !leg.poi.length) return '';
+  return `
+    <div class="poi-section">
+      <div class="poi-title">推薦景點 · 依區域分組</div>
+      <div class="poi-groups">
+        ${leg.poi.map(g => `
+          <div class="poi-group">
+            <div class="poi-area">${g.area}</div>
+            <div class="poi-desc">${g.desc}</div>
+            <ul class="poi-list">
+              ${g.spots.map(s => `<li>${s.name}<br><span class="tag">${s.tag}</span></li>`).join('')}
+            </ul>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
 }
 
-/* ===================== GOOGLE SHEET SYNC ===================== */
-function parseCSV(text){
-  const rows = [];
-  let row = [], field = '', inQuotes = false;
-  for(let i=0;i<text.length;i++){
-    const c = text[i], next = text[i+1];
-    if(inQuotes){
-      if(c === '"' && next === '"'){ field+='"'; i++; }
-      else if(c === '"'){ inQuotes = false; }
-      else field += c;
-    } else {
-      if(c === '"'){ inQuotes = true; }
-      else if(c === ','){ row.push(field); field=''; }
-      else if(c === '\n'){ row.push(field); rows.push(row); row=[]; field=''; }
-      else if(c === '\r'){ /* skip */ }
-      else field += c;
-    }
-  }
-  if(field.length || row.length){ row.push(field); rows.push(row); }
-  return rows;
+function legSection(leg){
+  const body = leg.isWeekly
+    ? dayCard(leg.days[0]) === '' ? '' : `<div class="day-grid" style="margin-bottom:16px;">${dayCard(leg.days[0])}</div>${weeklyBlock()}`
+    : `<div class="day-grid">${leg.days.map(dayCard).join('')}</div>`;
+
+  return `
+    <section class="leg" data-country="${leg.country}" id="${leg.id}">
+      <div class="leg-head">
+        <div class="leg-head-left">
+          <span class="leg-num mono">${leg.num}</span>
+          <span class="leg-name">${leg.name}</span>
+          <span class="leg-en">${leg.en}</span>
+        </div>
+        <div class="leg-meta">
+          <span class="badge">${leg.dateRange} · ${leg.dayRange}</span>
+          ${leg.alt ? `<span class="badge alt">▲ ${leg.alt}</span>` : ''}
+        </div>
+      </div>
+      ${body}
+      ${poiBlock(leg)}
+    </section>
+  `;
 }
 
-function matchCityId(locationText){
-  if(!locationText) return null;
-  const t = locationText;
-  const map = {
-    'Lima':'lima','Paracas':'paracas','Huacachina':'huacachina','Ica':'huacachina',
-    'Arequipa':'arequipa',
-    'Ollantaytambo':'ollantaytambo','Urubamba':'ollantaytambo',
-    'Aguas Calientes':'machu-picchu','Machu Picchu':'machu-picchu',
-    'cusco':'cusco','Cusco':'cusco',
-    'Puerto Maldonado':'puerto-maldonado','亞馬遜':'puerto-maldonado',
-    'Puno':'puno','Copacabana':'copacabana','Isla del Sol':'isla-del-sol',
-    'La Paz':'lapaz','Sucre':'sucre','Uyuni':'uyuni'
-  };
-  for(const k in map){ if(t.indexOf(k)!==-1) return map[k]; }
-  return null;
-}
+const legsContainer = document.getElementById('legs');
+legsContainer.innerHTML = LEGS.map(legSection).join('') + `
+  <section class="leg" id="whatsnext">
+    <div class="leg-head">
+      <div class="leg-head-left">
+        <span class="leg-num mono">10</span>
+        <span class="leg-name">接下來</span>
+        <span class="leg-en">Still Planning</span>
+      </div>
+      <div class="leg-meta">
+        <span class="badge">11/30 – 12/21 · Day 75–96</span>
+      </div>
+    </div>
+    <div class="note-card">
+      <b>試算表在這之後留白，行程尚未定案。</b><br>
+      依先前規劃討論，這段之後的方向大致朝智利（阿他加馬）與阿根廷（西北部 → 布宜諾斯艾利斯 → 伊瓜蘇瀑布 → 卡拉法特 → 百內國家公園 → 烏斯懷亞）發展，但確切天數與順序仍在調整中，之後回到試算表定案後，這一區塊可以直接補上日期與地點。
+    </div>
+  </section>
+`;
 
-async function syncFromSheet(){
-  const btn = document.getElementById('syncBtn');
-  const status = document.getElementById('syncStatus');
-  btn.disabled = true;
-  status.className = 'sync-status';
-  status.textContent = '同步中…';
-
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_NAME)}`;
-
-  try{
-    const res = await fetch(url);
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    const text = await res.text();
-    const rows = parseCSV(text);
-
-    const grouped = {};
-    let lastCity = null;
-    let startIdx = rows.findIndex(r => r.some(cell => cell && cell.indexOf('地點')!==-1));
-    if(startIdx === -1) startIdx = 0; else startIdx += 1;
-
-    for(let i=startIdx;i<rows.length;i++){
-      const r = rows[i];
-      if(!r || !r.length) continue;
-      const country = r[0]||'', date = r[1]||'', day = r[3]||'', location = r[4]||'', accommodation = r[5]||'', activity = r[8]||'';
-      const cityId = matchCityId(location) || lastCity;
-      if(!cityId) continue;
-      lastCity = cityId;
-      if(!activity && !date && !day && !location) continue;
-      if(!grouped[cityId]) grouped[cityId] = [];
-      grouped[cityId].push({date, day, location, accommodation, activity});
-    }
-
-    syncedRows = grouped;
-    try{ await saveValue('synced-rows', JSON.stringify(grouped)); }catch(e){}
-
-    status.className = 'sync-status ok';
-    const now = new Date();
-    status.textContent = `✓ 同步成功 · ${now.toLocaleString('zh-TW',{hour12:false})}`;
-    renderRawTable(CITIES.find(c=>c.id===activeCity));
-  } catch(err){
-    status.className = 'sync-status err';
-    status.textContent = '同步失敗 — 請確認試算表已設定「知道連結的任何人皆可查看」，或稍後再試';
-    console.error(err);
-  } finally {
-    btn.disabled = false;
-  }
-}
-
-/* ===================== INIT ===================== */
-async function init(){
-  renderElevationNav();
-  renderCityRail();
-
-  try{
-    const v = await loadValue('custom-suggestions');
-    if(v) customSuggestions = JSON.parse(v);
-  }catch(e){}
-  try{
-    const v = await loadValue('walk-state');
-    if(v){
-      const parsed = JSON.parse(v);
-      CITIES.forEach(city=>{
-        const names = parsed[city.id] || [];
-        const pool = [...city.suggestions, ...(customSuggestions[city.id]||[])];
-        walkState[city.id] = names.map(n => pool.find(s=>s.name===n)).filter(Boolean);
-      });
-    }
-  }catch(e){}
-  try{
-    const v = await loadValue('synced-rows');
-    if(v) syncedRows = JSON.parse(v);
-  }catch(e){}
-
-  selectCity(CITIES[0].id);
-  document.getElementById('syncBtn').addEventListener('click', syncFromSheet);
-
-  document.getElementById('gmapsApplyBtn').addEventListener('click', ()=>{
-    const key = document.getElementById('gmapsKeyInput').value.trim();
-    applyGoogleMaps(key);
-  });
-  try{
-    const savedKey = await loadValue('gmaps-api-key');
-    if(savedKey){
-      document.getElementById('gmapsKeyInput').value = savedKey;
-      applyGoogleMaps(savedKey);
-    }
-  }catch(e){}
-}
-init();
+// nav pills
+const nav = document.getElementById('topnav-inner');
+LEGS.forEach(leg=>{
+  const a = document.createElement('a');
+  a.href = '#' + leg.id;
+  a.className = 'pill';
+  a.dataset.c = leg.country;
+  a.textContent = leg.name;
+  nav.appendChild(a);
+});
+const more = document.createElement('a');
+more.href = '#whatsnext'; more.className='pill'; more.textContent='接下來';
+nav.appendChild(more);
 </script>
+
 </body>
 </html>
