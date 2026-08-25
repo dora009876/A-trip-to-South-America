@@ -241,7 +241,6 @@
   </div>
   <p class="hero-sub" style="margin:8px 0 0; font-size:12px;">還沒有金鑰？到 <a href="https://console.cloud.google.com/google/maps-apis/credentials" target="_blank" rel="noopener">Google Cloud Console</a> 免費申請一組「Maps JavaScript API」金鑰即可。這頁匯出成獨立網頁、放到你自己的網站後，通常就能正常載入真實地圖；在 Claude 這裡預覽時，有些網路環境可能還是連不到 Google 的地圖伺服器。</p>
   <div class="sync-bar" style="margin-top:10px;">
-    <a class="add-btn" style="text-decoration:none; padding:8px 14px; font-size:12.5px;" href="https://maps.app.goo.gl/hsHnScdFAUDb69tK7?g_st=i" target="_blank" rel="noopener">🏨 南美洲住宿清單</a>
     <a class="add-btn" style="text-decoration:none; padding:8px 14px; font-size:12.5px;" href="https://maps.app.goo.gl/mzZYJSyVjb8nwrUp9?g_st=i" target="_blank" rel="noopener">📍 秘魯地點清單</a>
     <a class="add-btn" style="text-decoration:none; padding:8px 14px; font-size:12.5px;" href="https://maps.app.goo.gl/ReHpF7QBqUyu5N1D7?g_st=i" target="_blank" rel="noopener">🍽 推薦餐廳清單</a>
   </div>
@@ -283,8 +282,13 @@
 
     <div>
       <div class="panel">
-        <h3>📍 已安排行程</h3>
-        <p class="panel-sub">依地理位置排出比較順的走法，點地圖可對照位置</p>
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:10px;">
+          <div>
+            <h3>📍 已安排行程</h3>
+            <p class="panel-sub">依地理位置排出比較順的走法，點地圖可對照位置</p>
+          </div>
+          <button id="clearWalkBtn" class="add-btn" style="white-space:nowrap; border-color:var(--terracotta); color:#E8A98A;">清空這個城市</button>
+        </div>
         <ul class="walk-list" id="walkList"></ul>
       </div>
       <div class="panel">
@@ -309,7 +313,7 @@
 <footer>資料來源：你的 Google 試算表（south_america_travel_template · Itinerary 分頁）· 建議景點僅供參考，出發前請再次確認開放時間與海拔風險</footer>
 
 <script>
-const SHEET_ID = "1TavZ1r5NluDoHF41yyDS6ibbllLj26Gq";
+const SHEET_ID = "1CepGjpKBHMbBB3yvpUVn3Zz3z2z-bh88NplQS8elwTM";
 const SHEET_NAME = "Itinerary";
 
 /* ===================== CITY DATA (matches current spreadsheet: Lima -> Uyuni) ===================== */
@@ -366,7 +370,7 @@ const CITIES = [
       {name:"安地斯聖物博物館", coords:[-16.3980,-71.5365], desc:"收藏冰封木乃伊「Juanita」，秘魯少數能近距離看冷凍印加祭品的地方"}
     ]
   },
-  { id:"colca", name:"Colca Canyon 科爾卡峽谷", country:"秘魯", coords:[-15.6019,-71.8508], altitude:3600, days:"Day 16（阿雷基帕→科爾卡→庫斯科途中）",
+  { id:"colca", name:"Colca Canyon 科爾卡峽谷", country:"秘魯", coords:[-15.6019,-71.8508], altitude:3600, days:"Day 14（阿雷基帕出發健行，Day 17 才接著往庫斯科方向出發）",
     walk:[],
     suggestions:[
       {name:"峽谷村落健行", coords:[-15.5850,-71.7800], desc:"從阿雷基帕出發、之後直接接往庫斯科方向的路線"},
@@ -934,6 +938,12 @@ function selectCity(id){
   renderWalkList(city);
   renderSuggestions(city);
   renderRawTable(city);
+
+  document.getElementById('clearWalkBtn').onclick = async ()=>{
+    walkState[city.id] = [];
+    await persistWalkState();
+    refreshCityView(city);
+  };
 }
 
 /* ===================== GOOGLE SHEET SYNC ===================== */
