@@ -367,16 +367,10 @@ const CITIES = [
       {name:"城市與火山景觀", coords:[-16.3950,-71.5300], desc:"眺望 Misti 火山"},
       {name:"武器廣場＋主教座堂", coords:[-16.3989,-71.5370], desc:"白色火山岩建築的廣場，阿雷基帕被稱為「白色之城」的原因就在這裡"},
       {name:"Yanahuara 觀景台", coords:[-16.3925,-71.5450], desc:"透過白色拱門框住 Misti 火山的經典取景點，走路可到"},
-      {name:"安地斯聖物博物館", coords:[-16.3980,-71.5365], desc:"收藏冰封木乃伊「Juanita」，秘魯少數能近距離看冷凍印加祭品的地方"}
-    ]
-  },
-  { id:"colca", name:"Colca Canyon 科爾卡峽谷", country:"秘魯", coords:[-15.6019,-71.8508], altitude:3600, days:"Day 14（阿雷基帕出發健行，Day 17 才接著往庫斯科方向出發）",
-    walk:[],
-    suggestions:[
-      {name:"峽谷村落健行", coords:[-15.5850,-71.7800], desc:"從阿雷基帕出發、之後直接接往庫斯科方向的路線"},
-      {name:"Cruz del Cóndor 觀景點", coords:[-15.6019,-71.8508], desc:"清晨時段最容易看到安地斯神鷹乘著氣流升起，是Colca最經典的畫面"},
-      {name:"Chivay La Calera 溫泉", coords:[-15.6350,-71.6050], desc:"健行完最適合放鬆的天然溫泉"},
-      {name:"Yanque / Coporaque 傳統村落", coords:[-15.6480,-71.7000], desc:"Collagua族傳統服飾與建築保留完整，比觀景點安靜許多"}
+      {name:"安地斯聖物博物館", coords:[-16.3980,-71.5365], desc:"收藏冰封木乃伊「Juanita」，秘魯少數能近距離看冷凍印加祭品的地方"},
+      {name:"科爾卡峽谷一日健行", coords:[-15.5850,-71.7800], desc:"從阿雷基帕出發的一日／多日團，若想安排可加回來——目前試算表裡沒有寫這段的細節"},
+      {name:"Cruz del Cóndor 觀景點（科爾卡）", coords:[-15.6019,-71.8508], desc:"清晨時段最容易看到安地斯神鷹乘著氣流升起，科爾卡峽谷最經典的畫面，跟上面的峽谷健行同一段路線"},
+      {name:"Chivay La Calera 溫泉（科爾卡）", coords:[-15.6350,-71.6050], desc:"科爾卡峽谷健行完最適合放鬆的天然溫泉"}
     ]
   },
   { id:"ollantaytambo", name:"Ollantaytambo 歐蘭泰坦波", country:"秘魯", coords:[-13.2568,-72.2636], altitude:2800, days:"Day 18–21, 24–25",
@@ -973,7 +967,7 @@ function matchCityId(locationText){
   const t = locationText;
   const map = {
     'Lima':'lima','Paracas':'paracas','Huacachina':'huacachina','Ica':'huacachina',
-    'Arequipa':'arequipa','Colca':'colca',
+    'Arequipa':'arequipa',
     'Ollantaytambo':'ollantaytambo','Urubamba':'ollantaytambo',
     'Aguas Calientes':'machu-picchu','Machu Picchu':'machu-picchu',
     'cusco':'cusco','Cusco':'cusco',
