@@ -20,6 +20,10 @@
     --peru-soft:#E4C6BA;
     --bolivia:#1E7F82;
     --bolivia-soft:#C3DEDA;
+    --chile:#2C5F8A;
+    --chile-soft:#C2D3E0;
+    --argentina:#8B3A62;
+    --argentina-soft:#DFC5D2;
     --gold:#B9862F;
     --transit:#7C7364;
     --shadow: 0 1px 0 rgba(42,35,28,0.06), 0 8px 24px -14px rgba(42,35,28,0.35);
@@ -70,6 +74,10 @@
   .pill[data-c="peru"]:hover{background:var(--peru); border-color:var(--peru); color:#fff;}
   .pill[data-c="bolivia"]{border-color:var(--bolivia-soft);}
   .pill[data-c="bolivia"]:hover{background:var(--bolivia); border-color:var(--bolivia); color:#fff;}
+  .pill[data-c="chile"]{border-color:var(--chile-soft);}
+  .pill[data-c="chile"]:hover{background:var(--chile); border-color:var(--chile); color:#fff;}
+  .pill[data-c="argentina"]{border-color:var(--argentina-soft);}
+  .pill[data-c="argentina"]:hover{background:var(--argentina); border-color:var(--argentina); color:#fff;}
 
   /* ---------- hero ---------- */
   .hero{max-width:1040px; margin:0 auto; padding:56px 24px 20px;}
@@ -134,6 +142,8 @@
   }
   .leg[data-country="peru"] .day-card{border-left:4px solid var(--peru);}
   .leg[data-country="bolivia"] .day-card{border-left:4px solid var(--bolivia);}
+  .leg[data-country="chile"] .day-card{border-left:4px solid var(--chile);}
+  .leg[data-country="argentina"] .day-card{border-left:4px solid var(--argentina);}
   .leg[data-country="transit"] .day-card{border-left:4px solid var(--transit);}
 
   .day-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px;}
@@ -182,6 +192,8 @@
   }
   .leg[data-country="peru"] .poi-group{border-top:3px solid var(--peru-soft);}
   .leg[data-country="bolivia"] .poi-group{border-top:3px solid var(--bolivia-soft);}
+  .leg[data-country="chile"] .poi-group{border-top:3px solid var(--chile-soft);}
+  .leg[data-country="argentina"] .poi-group{border-top:3px solid var(--argentina-soft);}
   .poi-area{font-family:'Noto Serif TC',serif; font-weight:700; font-size:14.5px; margin-bottom:3px;}
   .poi-desc{font-size:11.5px; color:var(--ink-faint); margin-bottom:10px; line-height:1.5;}
   .poi-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
@@ -215,17 +227,17 @@
 
 <nav class="topnav">
   <div class="topnav-inner" id="topnav-inner">
-    <span class="brand">南美 96 日</span>
+    <span class="brand">南美長征</span>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="eyebrow">9/16 → 12/21 · Peru → Bolivia → 未完待續</div>
-  <h1>利馬到烏尤尼，<br><em>一路往上爬的</em>南美行程</h1>
-  <p class="hero-sub">從海平面的利馬出發，翻過 3,400 公尺的庫斯科，一路爬升到接近 4,000 公尺的的的喀喀湖畔與玻利維亞高原——這趟行程最需要留意的，其實是海拔。</p>
+  <div class="eyebrow">9/16 起 · Peru → Bolivia → 持續延伸中</div>
+  <h1>一路往上爬的<br><em>南美長征</em></h1>
+  <p class="hero-sub">從海平面的利馬出發，翻過 3,400 公尺的庫斯科，一路爬升到接近 4,000 公尺的的的喀喀湖畔與玻利維亞高原——這趟行程最需要留意的，其實是海拔。路線仍在持續延伸，這頁會跟著更新。</p>
   <div class="stat-row">
-    <div class="stat"><b>96</b><span>總天數（含未定行程）</span></div>
-    <div class="stat"><b>2 <span class="mono" style="font-size:14px">→</span> 4+</b><span>已排／規劃中國家</span></div>
+    <div class="stat"><b>118+</b><span>目前已排／預留天數（持續增加中）</span></div>
+    <div class="stat"><b>4</b><span>已排國家（秘魯、玻利維亞、智利、阿根廷）</span></div>
     <div class="stat"><b>3,841m</b><span>行程最高點・科帕卡瓦納</span></div>
     <div class="stat"><b>0 → 3,400m</b><span>利馬到庫斯科的爬升</span></div>
   </div>
@@ -241,6 +253,8 @@
     <div class="elev-legend">
       <div><span class="dot" style="background:var(--peru)"></span>秘魯路段</div>
       <div><span class="dot" style="background:var(--bolivia)"></span>玻利維亞路段</div>
+      <div><span class="dot" style="background:var(--chile)"></span>智利路段</div>
+      <div><span class="dot" style="background:var(--argentina)"></span>阿根廷路段</div>
       <div><span class="dot" style="background:var(--gold)"></span>3,000m 以上高海拔區</div>
     </div>
   </div>
@@ -264,6 +278,14 @@ const ALT_POINTS = [
   {label:'La Paz', m:3640, c:'bolivia'},
   {label:'Sucre 蘇克雷', m:2810, c:'bolivia'},
   {label:'Uyuni 烏尤尼', m:3656, c:'bolivia'},
+  {label:'Atacama 阿他加馬', m:2408, c:'chile'},
+  {label:'La Serena', m:30, c:'chile'},
+  {label:'Valparaíso', m:20, c:'chile'},
+  {label:'Santiago 聖地牙哥', m:520, c:'chile'},
+  {label:'復活節島', m:50, c:'chile'},
+  {label:'Torres del Paine', m:50, c:'chile'},
+  {label:'Punta Arenas', m:5, c:'chile'},
+  {label:'El Calafate', m:200, c:'argentina'},
 ];
 
 function drawElevation(){
@@ -297,7 +319,8 @@ function drawElevation(){
 
   ALT_POINTS.forEach((p,i)=>{
     const x = padL + i*xStep, y = yFor(p.m);
-    const dotColor = p.c === 'bolivia' ? '#1E7F82' : '#B8442F';
+    const colorMap = {bolivia:'#1E7F82', chile:'#2C5F8A', argentina:'#8B3A62', peru:'#B8442F'};
+    const dotColor = colorMap[p.c] || '#B8442F';
     const above = i % 2 === 0;
     svgHtml += `
       <circle cx="${x}" cy="${y}" r="4.5" fill="${dotColor}" stroke="#F7F3E8" stroke-width="1.5"/>
@@ -468,7 +491,7 @@ const LEGS = [
     ]
   },
   {
-    id:'bolivia1', country:'bolivia', num:'08', name:'科帕卡瓦納・太陽島・拉巴斯', en:'Copacabana · Isla del Sol · La Paz', dateRange:'11/15 – 11/21', dayRange:'Day 60–66', alt:'3,640–3,841m',
+    id:'bolivia1', country:'bolivia', num:'08', name:'科帕卡瓦納・太陽島・拉巴斯', en:'Copacabana · Isla del Sol · La Paz', dateRange:'11/15 – 11/23', dayRange:'Day 60–68', alt:'3,640–3,841m',
     poi:[
       {area:'Copacabana 鎮', desc:'太陽島的門戶小鎮', spots:[
         {name:'科帕卡瓦納大教堂', tag:'摩爾式建築，朝聖地標'},
@@ -494,10 +517,12 @@ const LEGS = [
       {date:'11/19 週四', day:'Day 64', loc:'La Paz', stay:'La Paz', activity:''},
       {date:'11/20 週五', day:'Day 65', loc:'La Paz', stay:'La Paz', activity:''},
       {date:'11/21 週六', day:'Day 66', loc:'La Paz', stay:'La Paz', activity:''},
+      {date:'11/22 週日', day:'Day 67', loc:'La Paz', stay:'La Paz', activity:''},
+      {date:'11/23 週一', day:'Day 68', loc:'La Paz', stay:'La Paz', activity:''},
     ]
   },
   {
-    id:'sucreuyuni', country:'bolivia', num:'09', name:'蘇克雷・烏尤尼', en:'Sucre & Uyuni', dateRange:'11/22 – 11/29', dayRange:'Day 67–74', alt:'2,810–3,656m',
+    id:'sucreuyuni', country:'bolivia', num:'09', name:'蘇克雷・烏尤尼', en:'Sucre & Uyuni', dateRange:'11/24 – 12/9', dayRange:'Day 69–84', alt:'2,810–3,656m',
     poi:[
       {area:'Sucre 舊城中心', desc:'白城歷史核心，步行可達', spots:[
         {name:'Plaza 25 de Mayo', tag:'城市心臟，周邊建築環繞'},
@@ -519,14 +544,99 @@ const LEGS = [
       ]},
     ],
     days:[
-      {date:'11/22 週日', day:'Day 67', loc:'La Paz → Sucre', stay:'Sucre', activity:''},
-      {date:'11/23 週一', day:'Day 68', loc:'Sucre', stay:'Sucre', activity:''},
-      {date:'11/24 週二', day:'Day 69', loc:'Sucre', stay:'Sucre', activity:''},
-      {date:'11/25 週三', day:'Day 70', loc:'Sucre', stay:'—', activity:''},
-      {date:'11/26 週四', day:'Day 71', loc:'Sucre', stay:'—', activity:''},
-      {date:'11/27 週五', day:'Day 72', loc:'Uyuni', stay:'—', activity:''},
-      {date:'11/28 週六', day:'Day 73', loc:'Uyuni', stay:'—', activity:''},
-      {date:'11/29 週日', day:'Day 74', loc:'Uyuni', stay:'—', activity:''},
+      {date:'11/24 週二', day:'Day 69', loc:'La Paz → Sucre', stay:'Sucre', activity:''},
+      {date:'11/25 週三', day:'Day 70', loc:'Sucre', stay:'Sucre', activity:''},
+      {date:'11/26 週四', day:'Day 71', loc:'Sucre', stay:'Sucre', activity:''},
+      {date:'11/27 週五', day:'Day 72', loc:'Sucre', stay:'—', activity:''},
+      {date:'11/28 週六', day:'Day 73', loc:'Sucre', stay:'—', activity:''},
+      {date:'11/29 週日', day:'Day 74', loc:'Sucre', stay:'—', activity:''},
+      {date:'11/30 週一', day:'Day 75', loc:'Sucre → Uyuni', stay:'—', activity:''},
+      {date:'12/1 週二', day:'Day 76', loc:'Uyuni', stay:'—', activity:''},
+      {date:'12/2 週三', day:'Day 77', loc:'Uyuni', stay:'—', activity:''},
+      {date:'12/3 週四', day:'Day 78', loc:'Uyuni', stay:'—', activity:''},
+      {date:'12/4 週五', day:'Day 79', loc:'Uyuni →（銜接智利，待補）', stay:'—', activity:''},
+      {date:'12/5 週六', day:'Day 80', loc:'尚未安排', stay:'—', activity:''},
+      {date:'12/6 週日', day:'Day 81', loc:'尚未安排', stay:'—', activity:''},
+      {date:'12/7 週一', day:'Day 82', loc:'尚未安排', stay:'—', activity:''},
+      {date:'12/8 週二', day:'Day 83', loc:'尚未安排', stay:'—', activity:''},
+      {date:'12/9 週三', day:'Day 84', loc:'尚未安排', stay:'—', activity:''},
+    ]
+  },
+  {
+    id:'atacama', country:'chile', num:'10', name:'阿他加馬', en:'San Pedro de Atacama', dateRange:'12/10 – 12/14', dayRange:'Day 85–89', alt:'約 2,408m',
+    poi:[
+      {area:'San Pedro 鎮周邊行程', desc:'常見的幾個經典半日／一日行程', spots:[
+        {name:'月亮谷 Valle de la Luna', tag:'侵蝕地形，適合看日落'},
+        {name:'El Tatio 間歇泉', tag:'清晨出發，日出時噴發最壯觀'},
+        {name:'Laguna Cejar', tag:'高鹽度湖泊，可下水漂浮'},
+        {name:'星空團', tag:'世界數一數二的觀星地點'},
+      ]},
+    ],
+    days:[
+      {date:'12/10 週四', day:'Day 85', loc:'Atacama（San Pedro de Atacama）', stay:'—', activity:'月亮谷（Valle de la Luna）\nEl Tatio 間歇泉\nLaguna Cejar\n星空團（世界數一數二）'},
+      {date:'12/11 週五', day:'Day 86', loc:'Atacama（San Pedro de Atacama）', stay:'—', activity:''},
+      {date:'12/12 週六', day:'Day 87', loc:'Atacama（San Pedro de Atacama）', stay:'—', activity:''},
+      {date:'12/13 週日', day:'Day 88', loc:'Atacama（San Pedro de Atacama）', stay:'—', activity:''},
+      {date:'12/14 週一', day:'Day 89', loc:'Atacama（San Pedro de Atacama）', stay:'—', activity:''},
+    ]
+  },
+  {
+    id:'laserena', country:'chile', num:'11', name:'拉塞雷納', en:'La Serena', dateRange:'12/15 – 12/18', dayRange:'Day 90–93', alt:'約 30m',
+    days:[
+      {date:'12/15 週二', day:'Day 90', loc:'La Serena', stay:'—', activity:'Elqui Valley\n葡萄園\nPisco 酒廠\n天文台'},
+      {date:'12/16 週三', day:'Day 91', loc:'La Serena', stay:'—', activity:''},
+      {date:'12/17 週四', day:'Day 92', loc:'La Serena', stay:'—', activity:''},
+      {date:'12/18 週五', day:'Day 93', loc:'La Serena', stay:'—', activity:''},
+    ]
+  },
+  {
+    id:'valparaiso', country:'chile', num:'12', name:'瓦爾帕萊索・比尼亞德爾馬', en:'Valparaíso & Viña del Mar', dateRange:'12/19 – 12/23', dayRange:'Day 94–98', alt:'約 20m',
+    days:[
+      {date:'12/19 週六', day:'Day 94', loc:'Valparaíso + Viña del Mar', stay:'—', activity:'迷路\n看壁畫\n坐纜車\n海邊散步\n咖啡廳'},
+      {date:'12/20 週日', day:'Day 95', loc:'Valparaíso + Viña del Mar', stay:'—', activity:''},
+      {date:'12/21 週一', day:'Day 96', loc:'Valparaíso + Viña del Mar', stay:'—', activity:''},
+      {date:'12/22 週二', day:'Day 97', loc:'Valparaíso + Viña del Mar', stay:'—', activity:''},
+      {date:'12/23 週三', day:'Day 98', loc:'Valparaíso + Viña del Mar', stay:'—', activity:''},
+    ]
+  },
+  {
+    id:'santiago1', country:'chile', num:'13', name:'聖地牙哥', en:'Santiago', dateRange:'12/24 – 12/27', dayRange:'Day 99–102', alt:'約 520m',
+    days:[
+      {date:'12/24 週四', day:'Day 99', loc:'Santiago', stay:'—', activity:'Lastarria\nBellavista\nMercado Central\nCerro San Cristóbal'},
+      {date:'12/25 週五', day:'Day 100', loc:'Santiago', stay:'—', activity:''},
+      {date:'12/26 週六', day:'Day 101', loc:'Santiago', stay:'—', activity:''},
+      {date:'12/27 週日', day:'Day 102', loc:'Santiago', stay:'—', activity:''},
+    ]
+  },
+  {
+    id:'easterisland', country:'chile', num:'14', name:'復活節島', en:'Easter Island (Rapa Nui)', dateRange:'12/28 – 1/1', dayRange:'Day 103–107', alt:'約 50m',
+    days:[
+      {date:'12/28 週一', day:'Day 103', loc:'復活節島', stay:'—', activity:'Day 1 抵達\n市區散步\n看夕陽\n提早休息'},
+      {date:'12/29 週二', day:'Day 104', loc:'復活節島', stay:'—', activity:'Day 2 島東\nAhu Tongariki（日出）\nRano Raraku（摩艾採石場）\n其他摩艾群'},
+      {date:'12/30 週三', day:'Day 105', loc:'復活節島', stay:'—', activity:'Day 3 島西\nOrongo\nRano Kau 火山口\nTahai（日落）'},
+      {date:'12/31 週四', day:'Day 106', loc:'復活節島', stay:'—', activity:'Day 4 北部\nAnakena Beach\n游泳\n看摩艾\n咖啡廳'},
+      {date:'1/1 週五', day:'Day 107', loc:'復活節島', stay:'—', activity:'Day 5\n慢慢吃早餐\n飛回 Santiago'},
+    ]
+  },
+  {
+    id:'patagonia', country:'chile', num:'15', name:'聖地牙哥轉機・巴塔哥尼亞', en:'Santiago → Patagonia (Torres del Paine)', dateRange:'1/2 – 1/11', dayRange:'Day 108–117', alt:'Punta Arenas 海平面',
+    days:[
+      {date:'1/2 週六', day:'Day 108', loc:'Santiago（轉機停留）', stay:'—', activity:''},
+      {date:'1/3 週日', day:'Day 109', loc:'巴塔哥尼亞', stay:'—', activity:'Puerto Natales\nTorres del Paine\n冰河\n湖泊'},
+      {date:'1/4 週一', day:'Day 110', loc:'巴塔哥尼亞', stay:'—', activity:''},
+      {date:'1/5 週二', day:'Day 111', loc:'巴塔哥尼亞', stay:'—', activity:''},
+      {date:'1/6 週三', day:'Day 112', loc:'巴塔哥尼亞', stay:'—', activity:''},
+      {date:'1/7 週四', day:'Day 113', loc:'巴塔哥尼亞', stay:'—', activity:''},
+      {date:'1/8 週五', day:'Day 114', loc:'巴塔哥尼亞', stay:'—', activity:''},
+      {date:'1/9 週六', day:'Day 115', loc:'巴塔哥尼亞', stay:'—', activity:''},
+      {date:'1/10 週日', day:'Day 116', loc:'Punta Arenas', stay:'—', activity:''},
+      {date:'1/11 週一', day:'Day 117', loc:'Punta Arenas', stay:'—', activity:''},
+    ]
+  },
+  {
+    id:'argentina1', country:'argentina', num:'16', name:'阿根廷・埃爾卡拉法特', en:'Argentina — El Calafate', dateRange:'1/12 起', dayRange:'Day 118+', alt:'約 200m',
+    days:[
+      {date:'1/12 週二', day:'Day 118', loc:'El Calafate', stay:'—', activity:''},
     ]
   },
 ];
@@ -611,17 +721,17 @@ legsContainer.innerHTML = LEGS.map(legSection).join('') + `
   <section class="leg" id="whatsnext">
     <div class="leg-head">
       <div class="leg-head-left">
-        <span class="leg-num mono">10</span>
+        <span class="leg-num mono">17</span>
         <span class="leg-name">接下來</span>
         <span class="leg-en">Still Planning</span>
       </div>
       <div class="leg-meta">
-        <span class="badge">11/30 – 12/21 · Day 75–96</span>
+        <span class="badge">1/13 起 · Day 119+</span>
       </div>
     </div>
     <div class="note-card">
-      <b>試算表在這之後留白，行程尚未定案。</b><br>
-      依先前規劃討論，這段之後的方向大致朝智利（阿他加馬）與阿根廷（西北部 → 布宜諾斯艾利斯 → 伊瓜蘇瀑布 → 卡拉法特 → 百內國家公園 → 烏斯懷亞）發展，但確切天數與順序仍在調整中，之後回到試算表定案後，這一區塊可以直接補上日期與地點。
+      <b>試算表在 El Calafate 之後留白，行程尚未定案。</b><br>
+      表格已經預留日期格到 2027/3/4，之後的路線一旦確定，直接把新的一段補進來就好，前面已經排好的段落不會被影響。
     </div>
   </section>
 `;
